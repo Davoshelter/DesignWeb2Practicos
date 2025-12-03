@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OnlyTWO | Proyecto Modales</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">Only<span class="highlight">TWO</span></span>
+            </a>
+            <button class="nav-toggle" id="navToggle">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item"><a href="#" class="nav-link active">Modales</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="content-section">
+        <div class="container">
+            <h1 class="section-title">Proyecto: <span class="text-primary">Modales UI</span></h1>
+            
+            <div class="student-info-panel">
+                <p class="info-row"><span class="label">Estudiante:</span> <span class="value">José David Gorena Nava</span></p>
+                <p class="info-row"><span class="label">Materia:</span> <span class="value">Diseño Web 2</span></p>
+            </div>
+
+            <section class="demo-section">
+                <h2>1. Tipos de Modales</h2>
+                <p class="info">Haz clic en los botones para invocar las diferentes ventanas modales con estilos OnlyTWO.</p>
+                
+                <div class="examples-grid">
+                    <div class="box">
+                        <h3>Estándar</h3>
+                        <p>Estructura básica corregida</p>
+                        <button class="btn-tech btn-blue" id="openModalBasic">ABRIR MODAL</button>
+                    </div>
+
+                    <div class="box">
+                        <h3>Alerta / Danger</h3>
+                        <p>Para confirmaciones críticas</p>
+                        <button class="btn-tech btn-red" id="openModalDanger">ELIMINAR DATOS</button>
+                    </div>
+
+                    <div class="box">
+                        <h3>Formulario</h3>
+                        <p>Login o Ingreso de datos</p>
+                        <button class="btn-tech btn-outline" id="openModalForm">INICIAR SESIÓN</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="demo-section code-section">
+                <h2>📝 Estructura Correcta (Corregida)</h2>
+                <p class="info">Tu código tenía errores tipográficos. Esta es la sintaxis HTML5 válida:</p>
+                <pre><code>&lt;!-- Contenedor Oscuro (Overlay) --&gt;
+&lt;div class="modal-overlay" id="modalOverlay"&gt;
+    
+    &lt;!-- La Caja del Modal --&gt;
+    &lt;div class="modal-content" role="dialog" aria-modal="true"&gt;
+        
+        &lt;div class="modal-header"&gt;
+            &lt;h2 id="modalTitle"&gt;Título del Modal&lt;/h2&gt;
+            &lt;button class="close-btn"&gt;&times;&lt;/button&gt;
+        &lt;/div&gt;
+
+        &lt;div class="modal-body"&gt;
+            &lt;p&gt;Contenido del Modal...&lt;/p&gt;
+        &lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </section>
+        </div>
+    </main>
+
+    <div class="modal-overlay" id="modalBasic">
+        <div class="modal-content" role="dialog" aria-labelledby="titleBasic" aria-modal="true">
+            <div class="modal-header header-blue">
+                <h2 id="titleBasic">Información del Sistema</h2>
+                <button class="close-btn" aria-label="Cerrar">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Este es el modal estándar con la estructura que solicitaste. Se utiliza para mostrar información sin salir de la página actual.</p>
+                <p>Usa <code>display: flex</code> para centrarse y un fondo con desenfoque (backdrop-filter).</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-tech btn-blue close-action">Entendido</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modalDanger">
+        <div class="modal-content border-red" role="dialog" aria-labelledby="titleDanger" aria-modal="true">
+            <div class="modal-header header-red">
+                <h2 id="titleDanger">⚠ Zona de Peligro</h2>
+                <button class="close-btn" aria-label="Cerrar">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p><strong>¿Estás seguro de realizar esta acción?</strong></p>
+                <p>Esta acción es irreversible y borrará la base de datos local del navegador.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-tech btn-outline close-action">Cancelar</button>
+                <button class="btn-tech btn-red close-action">Eliminar Todo</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modalForm">
+        <div class="modal-content" role="dialog" aria-labelledby="titleForm" aria-modal="true">
+            <div class="modal-header header-blue">
+                <h2 id="titleForm">Acceso Usuario</h2>
+                <button class="close-btn" aria-label="Cerrar">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form class="modal-form">
+                    <div class="form-group">
+                        <label>Usuario</label>
+                        <input type="text" placeholder="user@onlytwo.dev">
+                    </div>
+                    <div class="form-group">
+                        <label>Contraseña</label>
+                        <input type="password" placeholder="••••••••">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-tech btn-blue close-action">Ingresar</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 <strong>OnlyTWO</strong> Development. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
