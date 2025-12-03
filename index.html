@@ -3,105 +3,187 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="OnlyTWO - Portafolio de Proyectos de Desarrollo y Diseño.">
+    <meta name="description" content="OnlyTWO - Portafolio de Proyectos">
     <title>OnlyTWO | Portafolio Central</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    
     <nav class="navbar">
-        <div class="container">
-            <a href="index.html" class="logo">
+        <div class="container navbar-container">
+            <a href="#" class="logo" onclick="location.reload()">
                 <span class="logo-icon">⚡</span>
                 <span class="logo-text">Only<span class="highlight">TWO</span></span>
             </a>
+            
             <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
                 <span class="hamburger"></span>
             </button>
+            
             <ul class="nav-menu" id="navMenu">
                 <li class="nav-item">
-                    <a href="index.html" class="nav-link active">Home</a>
+                    <a href="#" class="nav-link active" data-module="todos">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#proyectos" class="nav-link">Proyectos</a>
+                    <a href="#" class="nav-link" data-module="modulo1">Módulo 1</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link btn-cta">Contacto</a>
+                    <a href="#" class="nav-link" data-module="modulo2">Módulo 2</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-module="modulo3">Módulo 3</a>
                 </li>
             </ul>
         </div>
     </nav>
+
     <header class="hero">
         <div class="hero-content container">
-            <h1>Diseño y Desarrollo <span class="text-secondary">Web</span></h1>
-            <p>Un portafolio de proyectos y experimentos.</p>
+            <h1>Mis Proyectos <span class="text-secondary">HTML/CSS</span></h1>
+            <p>Selecciona un módulo en el menú para filtrar o explora la colección completa.</p>
         </div>
     </header>
 
-    <main class="content-section" id="proyectos">
-        <div class="container">
-            <h1 class="section-title">Portafolio <span class="text-primary">de Proyectos</span></h1>
-            <p class="lead-description">
-                Una colección centralizada de mis trabajos y experimentos en diseño y desarrollo web.
-            </p>
-            <div class="student-info">
-                <p><strong>Estudiante:</strong> José David Gorena Nava</p>
-                <p><strong>Materia:</strong> Diseño Web 2</p>
-            </div>
+    <main class="content-section">
+        <div class="container modules-wrapper">
             
-            <h2 class="section-title">Módulo 1</h2>
-            <div class="portfolio-grid">
-                <a href="./MODULO1/ARTICULO/index.html" class="project-card">
-                    <h3>Artículo</h3>
-                    <p>Diseño de un artículo con estilos modernos.</p>
-                </a>
-                <a href="./MODULO1/NAVEGACION/index.html" class="project-card">
-                    <h3>Navegación</h3>
-                    <p>Aplicando conceptos del Modulo 1 de Diseño Web 2</p>
-                </a>
-                <a href="./MODULO1/PERFIL/index.html" class="project-card">
-                    <h3>Perfil</h3>
-                    <p>Una tarjeta de perfil de usuario.</p>
-                </a>
-            </div>
+            <section id="modulo1" class="module active">
+                <h2 class="section-title">Módulo 1: <span class="text-primary">Fundamentos</span></h2>
+                <div class="portfolio-grid">
+                    
+                    <a href="./MODULO1/ARTICULO/index.html" class="cyber-card">
+                        <div class="card-image">
+                            <img src="./MODULO1/ARTICULO/Articulo.png" alt="Proyecto Articulo" onerror="this.src='https://via.placeholder.com/400x200/0f1011/ff2e2e?text=IMG+NOT+FOUND'">
+                            <div class="card-overlay"><i class="fas fa-file-alt"></i></div>
+                        </div>
+                        <div class="card-content">
+                            <h3>Artículo</h3>
+                            <p>Estructura semántica básica con estilos de texto modernos.</p>
+                            <span class="btn-cta-small">Ver Proyecto</span>
+                        </div>
+                    </a>
 
-            <h2 class="section-title">Módulo 2</h2>
-            <div class="portfolio-grid">
-                <a href="./MODULO2/BORDERS/index.html" class="project-card">
-                    <h3>Borders</h3>
-                    <p>Una exploración de bordes y sus propiedades.</p>
-                </a>
-                <a href="./MODULO2/PADDING/index.html" class="project-card">
-                    <h3>Padding</h3>
-                    <p>Ejemplos y uso de la propiedad padding.</p>
-                </a>
-                <a href="./MODULO2/CARDS/index.html" class="project-card">
-                    <h3>Card</h3>
-                    <p>Practica de Aplicar Diseños de Cartas Pro</p>
-                </a>
-                <a href="./MODULO2/BOX-SIZING/index.html" class="project-card">
-                    <h3>Box-Sizing</h3>
-                    <p>Demostración interactiva de la propiedad box-sizing.</p>
-                </a>
-            </div>
+                    <a href="./MODULO1/NAVEGACION/index.html" class="cyber-card">
+                        <div class="card-image">
+                            <img src="./MODULO1/NAVEGACION/Navegacion.png" alt="Proyecto Navegación" onerror="this.src='https://via.placeholder.com/400x200/0f1011/00f2ff?text=No+Image'">
+                            <div class="card-overlay"><i class="fas fa-compass"></i></div>
+                        </div>
+                        <div class="card-content">
+                            <h3>Navegación</h3>
+                            <p>Creación de menús y enlaces funcionales.</p>
+                            <span class="btn-cta-small">Ver Proyecto</span>
+                        </div>
+                    </a>
 
-            <h2 class="section-title">Módulo 3</h2>
-            <div class="portfolio-grid">
-                 <a href="./MODULO3/MODAL/index.html" class="project-card">
-                    <h3>Modal</h3>
-                    <p>Practica de Aplicar Modal Profesionales Diseños</p>
-                </a>
-                <a href="./MODULO3/STICKY/index.html" class="project-card">
-                    <h3>NavBar Sticky</h3>
-                    <p>Practica de Aplicar NavBar Sticky Diseños Pro</p>
-                </a>
-            </div>
+                    <a href="./MODULO1/PERFIL/index.html" class="cyber-card">
+                        <div class="card-image">
+                            <img src="./MODULO1/PERFIL/Perfil.png" alt="Proyecto Perfil" onerror="this.src='https://via.placeholder.com/400x200/0f1011/ff2e2e?text=No+Image'">
+                            <div class="card-overlay"><i class="fas fa-user-astronaut"></i></div>
+                        </div>
+                        <div class="card-content">
+                            <h3>Perfil Usuario</h3>
+                            <p>Tarjeta de presentación digital personal.</p>
+                            <span class="btn-cta-small">Ver Proyecto</span>
+                        </div>
+                    </a>
+
+                </div>
+            </section>
+
+            <section id="modulo2" class="module">
+                <h2 class="section-title">Módulo 2: <span class="text-secondary">Estilos Avanzados</span></h2>
+                <div class="portfolio-grid">
+                    
+                    <a href="./MODULO2/BORDERS/index.html" class="cyber-card">
+                        <div class="card-image">
+                            <img src="./MODULO2/BORDERS/Borders.png" alt="Borders" onerror="this.src='https://via.placeholder.com/400x200/0f1011/00f2ff?text=Borders'">
+                            <div class="card-overlay"><i class="fas fa-border-style"></i></div>
+                        </div>
+                        <div class="card-content">
+                            <h3>Borders</h3>
+                            <p>Estilos de borde, redondeado y contornos.</p>
+                            <span class="btn-cta-small">Ver Proyecto</span>
+                        </div>
+                    </a>
+
+                    <a href="./MODULO2/PADDING/index.html" class="cyber-card">
+                        <div class="card-image">
+                            <img src="./MODULO2/PADDING/Padding.png" alt="Padding" onerror="this.src='https://via.placeholder.com/400x200/0f1011/ff2e2e?text=Padding'">
+                            <div class="card-overlay"><i class="fas fa-expand-arrows-alt"></i></div>
+                        </div>
+                        <div class="card-content">
+                            <h3>Padding</h3>
+                            <p>Control de espaciado interno en cajas.</p>
+                            <span class="btn-cta-small">Ver Proyecto</span>
+                        </div>
+                    </a>
+
+                    <a href="./MODULO2/CARDS/index.html" class="cyber-card">
+                        <div class="card-image">
+                            <img src="./MODULO2/CARDS/Cards.png" alt="Cards Pro" onerror="this.src='https://via.placeholder.com/400x200/0f1011/00f2ff?text=Cards+Pro'">
+                            <div class="card-overlay"><i class="fas fa-layer-group"></i></div>
+                        </div>
+                        <div class="card-content">
+                            <h3>Cards Pro</h3>
+                            <p>Diseño avanzado de tarjetas UI.</p>
+                            <span class="btn-cta-small">Ver Proyecto</span>
+                        </div>
+                    </a>
+
+                    <a href="./MODULO2/BOX-SIZING/index.html" class="cyber-card">
+                        <div class="card-image">
+                            <img src="./MODULO2/BOX-SIZING/BoxSizing.png" alt="Box Sizing" onerror="this.src='https://via.placeholder.com/400x200/0f1011/ff2e2e?text=Box+Sizing'">
+                            <div class="card-overlay"><i class="fas fa-box-open"></i></div>
+                        </div>
+                        <div class="card-content">
+                            <h3>Box-Sizing</h3>
+                            <p>Gestión del modelo de caja (border-box).</p>
+                            <span class="btn-cta-small">Ver Proyecto</span>
+                        </div>
+                    </a>
+
+                </div>
+            </section>
+
+            <section id="modulo3" class="module">
+                <h2 class="section-title">Módulo 3: <span class="text-primary">Maquetación</span></h2>
+                <div class="portfolio-grid">
+                    
+                    <a href="./MODULO3/MODAL/index.html" class="cyber-card">
+                        <div class="card-image">
+                            <img src="./MODULO3/MODAL/Modal.png" alt="Modal" onerror="this.src='https://via.placeholder.com/400x200/0f1011/00f2ff?text=Modals'">
+                            <div class="card-overlay"><i class="fas fa-window-restore"></i></div>
+                        </div>
+                        <div class="card-content">
+                            <h3>Ventanas Modales</h3>
+                            <p>Pop-ups interactivos superpuestos.</p>
+                            <span class="btn-cta-small">Ver Proyecto</span>
+                        </div>
+                    </a>
+
+                    <a href="./MODULO3/STICKY/index.html" class="cyber-card">
+                        <div class="card-image">
+                            <img src="./MODULO3/STICKY/Sticky.png" alt="Sticky" onerror="this.src='https://via.placeholder.com/400x200/0f1011/ff2e2e?text=Sticky+Nav'">
+                            <div class="card-overlay"><i class="fas fa-anchor"></i></div>
+                        </div>
+                        <div class="card-content">
+                            <h3>Sticky Navbar</h3>
+                            <p>Barra de navegación fija al hacer scroll.</p>
+                            <span class="btn-cta-small">Ver Proyecto</span>
+                        </div>
+                    </a>
+
+                </div>
+            </section>
+
         </div>
     </main>
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 <strong>OnlyTWO</strong> Development. Todos los derechos reservados.</p>
+            <p>&copy; 2025 <strong>OnlyTWO</strong> Development. Santa Cruz, Bolivia.</p>
         </div>
     </footer>
 
