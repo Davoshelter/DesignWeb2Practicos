@@ -1,5 +1,5 @@
 /* ===============================================
-   INTERACTIVIDAD ONLYTWO
+   LÓGICA ONLYTWO + HOME VIEW
    =============================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -7,9 +7,59 @@ document.addEventListener('DOMContentLoaded', () => {
     const navToggle = document.getElementById('navToggle');
     const navMenu = document.getElementById('navMenu');
     const navLinks = document.querySelectorAll('.nav-link');
-    const navbar = document.querySelector('.navbar');
+    const modules = document.querySelectorAll('.module');
 
-    // 1. Toggle del menú hamburguesa
+    // --- FUNCIÓN PRINCIPAL DE VISUALIZACIÓN ---
+    function showModule(moduleId) {
+        
+        // 1. Marcar botón activo
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('data-module') === moduleId) {
+                link.classList.add('active');
+            }
+        });
+
+        // 2. Mostrar/Ocultar Módulos
+        if (moduleId === 'todos') {
+            // MODO HOME: Ver todo
+            modules.forEach(mod => {
+                mod.classList.add('active');
+                mod.style.display = 'block'; 
+            });
+        } else {
+            // MODO FILTRO: Ver uno solo
+            modules.forEach(mod => {
+                mod.classList.remove('active');
+                mod.style.display = 'none'; 
+            });
+
+            const targetModule = document.getElementById(moduleId);
+            if (targetModule) {
+                targetModule.style.display = 'block';
+                setTimeout(() => {
+                    targetModule.classList.add('active');
+                }, 10);
+            }
+        }
+    }
+
+    // --- CLICKS EN EL MENÚ ---
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const moduleId = link.getAttribute('data-module');
+            showModule(moduleId);
+
+            // CERRAR MENÚ MÓVIL AL SELECCIONAR
+            if (navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                navToggle.classList.remove('active');
+            }
+        });
+    });
+
+    // --- TOGGLE MENÚ MÓVIL ---
     if (navToggle) {
         navToggle.addEventListener('click', () => {
             navMenu.classList.toggle('active');
@@ -17,51 +67,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 2. Cerrar menú al hacer click en enlaces (si aplica)
-    navLinks.forEach(link => {
-        // Si los enlaces son para navegación en la misma página (scroll), mantenemos el cierre.
-        if(link.getAttribute('href').startsWith('#')) {
-            link.addEventListener('click', () => {
-                if (navMenu.classList.contains('active')) {
-                    navMenu.classList.remove('active');
-                    navToggle.classList.remove('active');
-                }
-            });
+    // --- CERRAR MENÚ AL HACER CLICK FUERA (Opcional, mejora UX) ---
+    document.addEventListener('click', (e) => {
+        if (!navMenu.contains(e.target) && !navToggle.contains(e.target) && navMenu.classList.contains('active')) {
+            navMenu.classList.remove('active');
+            navToggle.classList.remove('active');
         }
     });
 
-    // 3. Efecto Navbar al hacer scroll
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.style.background = 'rgba(15, 16, 17, 1)';
-            navbar.style.boxShadow = '0 2px 10px rgba(0, 242, 255, 0.1)';
-        } else {
-            navbar.style.background = 'rgba(15, 16, 17, 0.95)';
-            navbar.style.boxShadow = 'none';
-        }
-    });
-
-    // 4. Scroll Spy (se mantiene por si se añade contenido con IDs en el futuro)
-    window.addEventListener('scroll', () => {
-        let current = '';
-        const sections = document.querySelectorAll('section[id]');
-        
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            if (pageYOffset >= (sectionTop - 150)) {
-                current = section.getAttribute('id');
-            }
-        });
-
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            const href = link.getAttribute('href');
-            // Asegurarse que el link es un ancla a una sección
-            if (href.includes('#') && href.substring(href.indexOf('#')) === `#${current}`) {
-                link.classList.add('active');
-            }
-        });
-    });
-
+    // --- INICIALIZAR EN HOME ---
+    showModule('todos'); 
+    
     console.log('⚡ OnlyTWO System Online');
 });
