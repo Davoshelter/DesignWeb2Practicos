@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Proyecto Cards - Dominando el Box Model y Componentes UI.">
+    <title>OnlyTWO | Proyecto Cards</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">Only<span class="highlight">TWO</span></span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link active">Proyectos</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="content-section" id="proyectos">
+        <div class="container">
+            <h1 class="section-title">Proyecto: <span class="text-primary">Cards & Box Model</span></h1>
+            
+            <div class="student-info-panel">
+                <p class="info-row"><span class="label">Estudiante:</span> <span class="value">José David Gorena Nava</span></p>
+                <p class="info-row"><span class="label">Materia:</span> <span class="value">Diseño Web 2</span></p>
+            </div>
+            
+            <div class="original-content">
+                
+                <section class="demo-section">
+                    <h2>1. Anatomía de una Card (Box Model)</h2>
+                    <p class="info">Para crear una tarjeta profesional, debemos entender las capas de una caja.</p>
+                    <div class="examples-grid">
+                        <div class="box layer-content"><div class="layer-text">1. Content<br><small>(Texto/Img)</small></div></div>
+                        <div class="box layer-padding"><div class="layer-text">2. Padding<br><small>(Aire interno)</small></div></div>
+                        <div class="box layer-border"><div class="layer-text">3. Border<br><small>(Límite)</small></div></div>
+                        <div class="box layer-margin"><div class="layer-text">4. Margin<br><small>(Separación)</small></div></div>
+                    </div>
+                </section>
+
+                <section class="demo-section">
+                    <h2>2. Control de Tamaño (Box-Sizing)</h2>
+                    <p class="info">El reto pide que la tarjeta mida exactamente lo que definimos, sin crecer por el padding.</p>
+                    <div class="examples-grid">
+                        <div class="box comparison-box">
+                            <h3 class="status-bad">❌ Sin border-box</h3>
+                            <div class="visual-rect bad-rect">
+                                <span class="measure">Width: 340px</span>
+                            </div>
+                            <p class="explanation">300px ancho + 40px padding = <strong>340px (Desastre)</strong></p>
+                        </div>
+                        <div class="box comparison-box">
+                            <h3 class="status-good">✅ Con border-box</h3>
+                            <div class="visual-rect good-rect">
+                                <span class="measure">Width: 300px</span>
+                            </div>
+                            <p class="explanation">300px ancho + 40px padding = <strong>300px (Perfecto)</strong></p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="demo-section">
+                    <h2>3. Resultado Final (Card High Performance)</h2>
+                    <p class="info">Implementando <strong>Padding</strong> de 25px y <strong>Margen Negativo</strong> de -25px para la imagen.</p>
+                    
+                    <div class="card-showcase">
+                        <article class="tech-card">
+                            <div class="card-image-header">
+                                <span class="img-icon">CSS</span>
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">Master Box Model</h3>
+                                <div class="card-price">$FREE</div>
+                                <p class="card-desc">
+                                    Esta tarjeta tiene padding interno, pero la imagen superior toca los bordes gracias al margen negativo.
+                                </p>
+                                <button class="btn-action">VER DETALLES</button>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="demo-section code-section">
+                    <h2>📝 Lógica del Margen Negativo</h2>
+                    <pre><code>/* El Contenedor (La Card) */
+.tech-card {
+    padding: 25px; /* Espacio interno general */
+    border: 1px solid #333;
+}
+
+/* La Imagen (Cabecera) */
+.card-image-header {
+    /* Calculamos ancho para recuperar espacio perdido */
+    width: calc(100% + 50px); 
+    
+    /* Movemos la imagen hacia afuera (Negativo) */
+    margin: -25px -25px 20px -25px;
+}</code></pre>
+                </section>
+                
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 <strong>OnlyTWO</strong> Development. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
