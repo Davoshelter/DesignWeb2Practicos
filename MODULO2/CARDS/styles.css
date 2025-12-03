@@ -1,0 +1,197 @@
+/* =====================================
+   RESET Y VARIABLES
+   ===================================== */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;700&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+    --primary: #ff2e2e;      /* Rojo Neón */
+    --secondary: #00f2ff;    /* Azul Turquesa */
+    --success: #00ff48;      /* Verde Éxito */
+    
+    /* CAMBIO DE FONDO A "PLOMO" PARA CONTRASTE */
+    --bg-dark: #2b2d31;      /* Fondo Plomo Tecnológico */
+    --bg-panel: #161719;     /* Fondo de Tarjetas (Más oscuro) */
+    
+    --text: #ffffff;
+    --text-muted: #a0a0a0;
+    --nav-height: 80px;
+    --card-height: 450px;    /* Altura fija para el Flip */
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-dark); /* Aquí se aplica el plomo */
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, .logo, .card-title, .price-current, .btn-tech, .card-badge, .panel-header { 
+    font-family: 'Orbitron', sans-serif; letter-spacing: 1px; 
+}
+
+/* =====================================
+   NAVBAR & LAYOUT
+   ===================================== */
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+.navbar {
+    position: sticky; top: 0; left: 0; width: 100%; height: var(--nav-height);
+    background: rgba(43, 45, 49, 0.95); /* Adaptado al plomo */
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid var(--primary); z-index: 1000;
+    display: flex; align-items: center; transition: 0.3s;
+}
+.navbar.scrolled {
+    background: rgba(22, 23, 25, 1); /* Se oscurece al bajar */
+    box-shadow: 0 2px 20px rgba(0, 242, 255, 0.1);
+    border-bottom: 2px solid var(--secondary); height: 70px;
+}
+
+.nav-container { width: 100%; display: flex; justify-content: space-between; align-items: center; }
+.logo { color: white; text-decoration: none; font-weight: 900; font-size: 1.5rem; display: flex; align-items: center; gap: 8px; }
+.logo .highlight { color: var(--secondary); }
+.nav-actions { display: flex; align-items: center; gap: 20px; }
+.nav-menu { list-style: none; display: flex; gap: 20px; align-items: center; }
+.nav-link { color: #ddd; text-decoration: none; font-weight: 500; transition: 0.3s; }
+.nav-link:hover, .nav-link.active { color: var(--secondary); }
+.btn-volver { border: 1px solid var(--primary); padding: 5px 15px; border-radius: 4px; color: var(--primary) !important; font-weight: bold; font-size: 0.85rem; transition: 0.3s; }
+.btn-volver:hover { background: var(--primary); color: white !important; box-shadow: 0 0 15px var(--primary); }
+
+.content-section { padding: 120px 0 60px; }
+.section-title { font-size: 2.2rem; margin-bottom: 20px; text-transform: uppercase; border-bottom: 1px solid #333; padding-bottom: 15px; }
+.text-primary { color: var(--primary); }
+.lead { color: var(--text-muted); margin-bottom: 40px; font-size: 1.1rem; }
+
+/* Panel Estudiante (Fondo transparente para integrarse al plomo) */
+.student-info-panel {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 15px 20px; border-left: 4px solid var(--primary);
+    margin-bottom: 40px; border-radius: 0 8px 8px 0;
+}
+.info-row { font-size: 1rem; margin-bottom: 5px; }
+.info-row .label { color: var(--secondary); font-weight: 700; margin-right: 10px; font-family: 'Orbitron'; }
+.info-row .value { color: #fff; }
+
+/* Widget Carrito */
+.cart-widget { position: relative; cursor: pointer; margin-right: 15px; }
+.cart-icon { font-size: 1.5rem; filter: grayscale(1); transition: 0.3s; }
+.cart-widget:hover .cart-icon { filter: grayscale(0); text-shadow: 0 0 10px white; }
+.cart-count { position: absolute; top: -8px; right: -10px; background: var(--primary); color: white; font-size: 0.75rem; font-weight: bold; width: 20px; height: 20px; border-radius: 50%; display: flex; justify-content: center; align-items: center; border: 1px solid #fff; transition: 0.3s; }
+.cart-count.bump { transform: scale(1.3); }
+
+/* =====================================
+   FLIP CARDS (3D)
+   ===================================== */
+.cards-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem; justify-items: center;
+}
+
+/* Escena 3D */
+.card-scene {
+    width: 100%;
+    height: var(--card-height);
+    perspective: 1000px; /* Profundidad */
+}
+
+/* Contenedor Giratorio */
+.card-inner {
+    position: relative; width: 100%; height: 100%;
+    text-align: center;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-style: preserve-3d;
+}
+.card-scene:hover .card-inner { transform: rotateY(180deg); }
+
+/* Caras Comunes */
+.card-face {
+    position: absolute; width: 100%; height: 100%;
+    -webkit-backface-visibility: hidden; backface-visibility: hidden;
+    border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);
+    overflow: hidden;
+    /* Fondo oscuro para contrastar con el Body Plomo */
+    background: var(--bg-panel); 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* === CARA FRONTAL === */
+.card-front { display: flex; flex-direction: column; }
+
+.card-image { position: relative; height: 60%; overflow: hidden; border-bottom: 1px solid #333; }
+.card-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+.card-scene:hover .card-image img { transform: scale(1.1); }
+.card-badge { position: absolute; top: 15px; right: 15px; background: var(--secondary); color: black; padding: 4px 8px; font-size: 0.7rem; font-weight: bold; border-radius: 4px; z-index: 5; }
+.badge-sale { background: var(--primary); color: white; }
+
+.front-content { padding: 20px; flex: 1; display: flex; flex-direction: column; justify-content: center; }
+.card-title { font-size: 1.4rem; color: #fff; margin-bottom: 5px; }
+.price-current { font-size: 1.8rem; font-weight: 700; color: var(--secondary); }
+.flip-hint { color: var(--text-muted); font-size: 0.8rem; margin-top: auto; opacity: 0.7; letter-spacing: 1px; }
+
+/* === CARA TRASERA === */
+.card-back {
+    transform: rotateY(180deg);
+    background: #111; /* Aún más oscuro para el reverso */
+    display: flex; flex-direction: column; padding: 25px;
+    border: 1px solid var(--secondary); /* Borde Neón */
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.2);
+}
+
+.back-title { color: var(--secondary); font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px dashed #333; padding-bottom: 10px; }
+.card-description { font-size: 0.9rem; color: #ccc; line-height: 1.5; margin-bottom: 20px; text-align: left; flex: 1; }
+.tech-specs { list-style: none; text-align: left; margin-bottom: 20px; font-size: 0.85rem; color: #888; }
+.tech-specs li { margin-bottom: 5px; }
+
+/* Botón de Compra */
+.btn-tech {
+    width: 100%; background: transparent; border: 1px solid var(--primary); color: var(--primary);
+    padding: 1rem; font-family: 'Orbitron', sans-serif; font-weight: bold; cursor: pointer; transition: 0.3s;
+    position: relative; overflow: hidden;
+}
+.btn-tech:hover { background: rgba(255, 46, 46, 0.1); box-shadow: 0 0 15px var(--primary); color: white; }
+.btn-tech.loading .btn-text { display: none; }
+.btn-loader { display: none; width: 20px; height: 20px; border: 2px solid rgba(255,255,255,0.3); border-top-color: #fff; border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto; }
+.btn-tech.loading .btn-loader { display: block; }
+.btn-tech.success { border-color: var(--success); color: var(--success); }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* =====================================
+   SECCIÓN TEORÍA (BOX MODEL)
+   ===================================== */
+.theory-section { margin-top: 80px; padding-top: 40px; border-top: 1px solid #444; }
+.panel-header { text-align: center; color: white; margin-bottom: 40px; font-size: 1.8rem; }
+
+.theory-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+
+.theory-card {
+    background: #222; /* Fondo oscuro sobre el body plomo */
+    padding: 25px; border-radius: 8px; border-bottom: 3px solid var(--secondary);
+    transition: 0.3s;
+}
+.theory-card:hover { transform: translateY(-5px); border-bottom-color: var(--primary); background: #1a1a1a; box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+
+.icon-box { font-size: 2rem; margin-bottom: 10px; }
+.theory-card h3 { color: white; margin-bottom: 10px; font-size: 1.1rem; font-family: 'Orbitron'; }
+.theory-card p { color: #bbb; font-size: 0.9rem; }
+.theory-card code { background: #000; padding: 2px 5px; border-radius: 3px; color: var(--secondary); font-family: monospace; }
+
+/* TOAST */
+#toast-container { position: fixed; bottom: 30px; right: 30px; display: flex; flex-direction: column; gap: 10px; z-index: 2000; }
+.toast { background: #111; border-left: 4px solid var(--secondary); color: white; padding: 15px 20px; border-radius: 4px; box-shadow: 0 5px 15px rgba(0,0,0,0.5); animation: slideIn 0.3s; min-width: 250px; display: flex; gap: 10px; align-items: center; }
+@keyframes slideIn { from { transform: translateX(100%); } to { transform: translateX(0); } }
+
+/* FOOTER & RESPONSIVE */
+.footer { text-align: center; padding: 40px 0; border-top: 1px solid #444; color: #ccc; margin-top: 60px; background: rgba(0,0,0,0.2); }
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; }
+.hamburger { width: 30px; height: 3px; background: white; display: block; position: relative; }
+.hamburger::before, .hamburger::after { content: ''; position: absolute; width: 100%; height: 100%; background: white; left: 0; transition: 0.3s; }
+.hamburger::before { top: -8px; } .hamburger::after { top: 8px; }
+
+@media (max-width: 768px) {
+    .nav-toggle { display: block; z-index: 1001; }
+    .nav-menu { position: fixed; top: 0; right: -100%; width: 80%; height: 100vh; background: #222; flex-direction: column; justify-content: center; transition: 0.4s; border-left: 2px solid var(--primary); }
+    .nav-menu.active { right: 0; }
+}

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="OnlyTWO - Laboratorio interactivo de CSS Padding">
+    <title>OnlyTWO | Laboratorio de Padding CSS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">Only<span class="highlight">TWO</span></span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link active">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Proyectos</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../../index.html" class="nav-link btn-volver">Volver</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="content-section" id="proyectos">
+        <div class="container">
+            <h1 class="section-title">Laboratorio de <span class="text-primary">Padding CSS</span></h1>
+            <p class="lead">
+                Manipula los controles para ver en tiempo real cómo la propiedad <code>padding</code> afecta el espaciado interno de un elemento. Observa cómo cambia el código CSS generado automáticamente.
+            </p>
+
+            <div class="interactive-padding-container">
+                <!-- Panel de Controles CORREGIDO -->
+                <div class="controls-panel">
+                    <div class="panel-header">
+                        <h2 class="panel-title">Panel de Control</h2>
+                        <div class="sync-toggle" id="syncToggle">
+                            <span class="sync-label">Sincronizar</span>
+                            <label class="switch">
+                                <input type="checkbox" id="syncAll" checked>
+                                <span class="slider-switch"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <div class="label-row">
+                            <label for="padding-all">Padding General</label>
+                            <span class="val-display" id="padding-all-value">20px</span>
+                        </div>
+                        <input type="range" id="padding-all" min="0" max="100" value="20" class="slider">
+                    </div>
+
+                    <div class="control-group">
+                        <div class="label-row">
+                            <label for="padding-top">Padding Superior</label>
+                            <span class="val-display" id="padding-top-value">20px</span>
+                        </div>
+                        <input type="range" id="padding-top" min="0" max="100" value="20" class="slider">
+                    </div>
+
+                    <div class="control-group">
+                        <div class="label-row">
+                            <label for="padding-right">Padding Derecho</label>
+                            <span class="val-display" id="padding-right-value">20px</span>
+                        </div>
+                        <input type="range" id="padding-right" min="0" max="100" value="20" class="slider">
+                    </div>
+
+                    <div class="control-group">
+                        <div class="label-row">
+                            <label for="padding-bottom">Padding Inferior</label>
+                            <span class="val-display" id="padding-bottom-value">20px</span>
+                        </div>
+                        <input type="range" id="padding-bottom" min="0" max="100" value="20" class="slider">
+                    </div>
+
+                    <div class="control-group">
+                        <div class="label-row">
+                            <label for="padding-left">Padding Izquierdo</label>
+                            <span class="val-display" id="padding-left-value">20px</span>
+                        </div>
+                        <input type="range" id="padding-left" min="0" max="100" value="20" class="slider">
+                    </div>
+
+                    <div class="action-buttons">
+                        <button class="btn" id="resetBtn">Reiniciar</button>
+                        <button class="btn secondary" id="randomBtn">Aleatorio</button>
+                    </div>
+                </div>
+
+                <!-- Área de Demostración CORREGIDA -->
+                <div class="demo-area">
+                    <div class="demo-label">ÁREA DE VISUALIZACIÓN</div>
+                    
+                    <div class="x-axis axis-guide"></div>
+                    <div class="y-axis axis-guide"></div>
+                    
+                    <div class="demo-box" id="demoBox">
+                        <!-- Marcadores de tamaño dinámicos -->
+                        <div class="size-indicator size-top" id="sizeTop">top: 20px</div>
+                        <div class="size-indicator size-right" id="sizeRight">right: 20px</div>
+                        <div class="size-indicator size-bottom" id="sizeBottom">bottom: 20px</div>
+                        <div class="size-indicator size-left" id="sizeLeft">left: 20px</div>
+                        
+                        <!-- Contenido interno -->
+                        <div class="demo-content">
+                            <div class="content-text">Contenido</div>
+                            <div class="dimensions">150 × 100px</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Terminal de Código MEJORADA -->
+            <div class="code-terminal">
+                <div class="terminal-header">
+                    <div class="dot red"></div>
+                    <div class="dot yellow"></div>
+                    <div class="dot green"></div>
+                    <span class="terminal-title">css-generado.css</span>
+                </div>
+                <pre><code id="cssCode"><span class="property">padding</span>: <span class="value">20</span><span class="unit">px</span>;</code></pre>
+                <div class="copy-hint">Haz clic en el código para copiar</div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 <strong>OnlyTWO</strong> Development. Todos los derechos reservados.</p>
+            <p style="margin-top: 10px; font-size: 0.9rem;">Laboratorio interactivo de CSS - Propiedad Padding</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

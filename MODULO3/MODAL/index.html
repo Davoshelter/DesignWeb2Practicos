@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal Interactivo | Diseño UI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto+Mono:wght@400;500&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="#" class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">Box<span class="text-white">LAB</span></span>
+            </a>
+            <div class="nav-links">
+                <a href="#" class="nav-link">Laboratorio</a>
+                <a href="#" class="nav-link">Casos Reales</a>
+                <a href="../../index.html" class="btn-nav">← Volver</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="main-header">
+        <div class="container">
+            <h1 class="page-title">MODAL <span class="text-primary">INTERACTIVO</span></h1>
+        </div>
+    </header>
+
+    <div class="info-bar-strip">
+        <div class="container info-bar-content">
+            <div class="info-group">
+                <span class="info-label">Estudiante:</span>
+                <span class="info-value">José David Gorena Nava</span>
+            </div>
+            <div class="info-group">
+                <span class="info-label">Materia:</span>
+                <span class="info-value">Diseño Web 2</span>
+            </div>
+        </div>
+    </div>
+
+    <main class="main-content">
+        <div class="container">
+            
+            <div class="control-panel">
+                <div class="panel-header">
+                    <h3 class="panel-subtitle">PANEL DE CONTROL //</h3>
+                </div>
+
+                <div class="panel-body">
+                    <div class="control-row">
+                        <p class="panel-desc">
+                            Estado del sistema: <span class="status-ok">EN ESPERA</span><br>
+                            Haga clic para iniciar la secuencia de ventana modal.
+                        </p>
+                    </div>
+
+                    <div class="control-row action-area">
+                        <button class="btn-open" id="btnOpen">
+                            INICIAR DEMOSTRACIÓN
+                        </button>
+                        
+                        <div class="shortcuts">
+                            <span>Atajos: <kbd>ESPACIO</kbd> abrir • <kbd>ESC</kbd> cerrar</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <dialog class="modal" id="modal">
+        <div class="modal-wrapper">
+            <div class="modal-header">
+                <h2 class="modal-title">MENSAJE DEL SISTEMA</h2>
+                <button class="btn-close" id="btnClose">&times;</button>
+            </div>
+            
+            <div class="modal-body">
+                <div class="modal-content-centered">
+                    <div class="icon-box">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                        </svg>
+                    </div>
+                    <h3 class="highlight-text">PROTOCOLO ACTIVADO</h3>
+                    <p>El sistema ha respondido correctamente a la interacción del usuario. La ventana modal está centrada y operativa.</p>
+                </div>
+            </div>
+            
+            <div class="modal-footer">
+                <button class="btn-action" id="btnAccept">CONFIRMAR</button>
+            </div>
+            
+            <div class="scanline"></div>
+        </div>
+    </dialog>
+
+    <script src="script.js"></script>
+</body>
+</html>

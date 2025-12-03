@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Demostración de diferentes tipos de navbars pegajosos (sticky).">
+    <title>OnlyTWO | Laboratorio de NavBars Sticky</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-main">
+        <div class="container">
+            <a href="../../index.html" class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">Laboratorio<span class="highlight">NAV</span></span>
+            </a>
+            <a href="../../index.html" class="nav-link btn-volver">← Volver al Portfolio</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <h1>Laboratorio de NavBars Pegajosas</h1>
+            <p>Una colección de diferentes implementaciones de <code>position: sticky</code>.</p>
+        </div>
+    </header>
+
+    <!-- ========= SECCIÓN 1: STICKY BÁSICO ========= -->
+    <section class="demo-section">
+        <nav class="navbar navbar-basic" id="navBasic">
+            <div class="container">
+                <span class="navbar-title">1. Sticky Básico</span>
+            </div>
+        </nav>
+        <div class="content-block">
+            <div class="container">
+                <p>Este es el ejemplo más simple. La barra de navegación se desplaza con la página hasta que llega a la parte superior, donde se queda "pegada". No requiere JavaScript, solo <code>position: sticky; top: 0;</code>.</p>
+                <img src="https://via.placeholder.com/900x400.png/0f1011/00f2ff?text=Ejemplo+Visual+1" alt="Placeholder Image 1" class="img-placeholder">
+                <div class="feature-grid">
+                    <div class="feature-card"><h3>Simplicidad</h3><p>Fácil de implementar y muy robusto.</p></div>
+                    <div class="feature-card"><h3>Rendimiento</h3><p>Nativo de CSS, no sobrecarga el navegador.</p></div>
+                    <div class="feature-card"><h3>Compatibilidad</h3><p>Soportado por todos los navegadores modernos.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========= SECCIÓN 2: CAMBIO DE ESTILO ========= -->
+    <section class="demo-section">
+        <nav class="navbar navbar-color-change" id="navColorChange">
+            <div class="container">
+                <span class="navbar-title">2. Sticky con Cambio de Estilo</span>
+            </div>
+        </nav>
+        <div class="content-block">
+            <div class="container">
+                <p>Esta barra empieza siendo semi-transparente. Al hacer scroll, una clase <code>.scrolled</code> se añade vía JavaScript, cambiando su fondo a un color sólido y añadiendo una sombra. Muy útil sobre cabeceras con imágenes.</p>
+                <img src="https://via.placeholder.com/900x400.png/0f1011/ff2e2e?text=Ejemplo+Visual+2" alt="Placeholder Image 2" class="img-placeholder">
+                <div class="feature-grid">
+                    <div class="feature-card"><h3>Dinamismo</h3><p>Crea una transición visual clara.</p></div>
+                    <div class="feature-card"><h3>Legibilidad</h3><p>Asegura que el texto del navbar se lea bien.</p></div>
+                    <div class="feature-card"><h3>Contextual</h3><p>Se adapta al contenido que está debajo.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========= SECCIÓN 3: REDUCCIÓN DE TAMAÑO ========= -->
+    <section class="demo-section">
+        <nav class="navbar navbar-shrink" id="navShrink">
+            <div class="container">
+                <span class="navbar-title">3. Sticky que se Encoge (Shrink)</span>
+                 <a href="#" class="logo-shrink">Logo</a>
+            </div>
+        </nav>
+        <div class="content-block">
+            <div class="container">
+                <p>Al hacer scroll, esta barra reduce su altura (padding) y el tamaño de la fuente. Es una técnica elegante para maximizar el espacio visible del contenido. También se controla con una clase <code>.scrolled</code> desde JavaScript.</p>
+                <img src="https://via.placeholder.com/900x400.png/0f1011/4834d4?text=Ejemplo+Visual+3" alt="Placeholder Image 3" class="img-placeholder">
+                <div class="feature-grid">
+                    <div class="feature-card"><h3>Eficiencia</h3><p>Menos espacio de navbar, más para el contenido.</p></div>
+                    <div class="feature-card"><h3>Elegancia</h3><p>Una micro-interacción que denota calidad.</p></div>
+                    <div class="feature-card"><h3>Foco</h3><p>El contenido principal gana protagonismo.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ========= SECCIÓN 4: APARECE AL SUBIR ========= -->
+    <section class="demo-section">
+        <nav class="navbar navbar-reveal" id="navReveal">
+             <div class="container">
+                <span class="navbar-title">4. Sticky que Aparece al Subir</span>
+            </div>
+        </nav>
+        <div class="content-block">
+             <div class="container">
+                <p>Esta barra se oculta cuando haces scroll hacia abajo para no estorbar, pero reaparece inmediatamente en cuanto empiezas a subir. Requiere JavaScript para detectar la dirección del scroll.</p>
+                <img src="https://via.placeholder.com/900x400.png/0f1011/e84393?text=Ejemplo+Visual+4" alt="Placeholder Image 4" class="img-placeholder">
+                <div class="feature-grid">
+                    <div class="feature-card"><h3>Inmersivo</h3><p>La interfaz se quita del medio al leer.</p></div>
+                    <div class="feature-card"><h3>Intuitivo</h3><p>Reaparece cuando el usuario muestra intención de navegar.</p></div>
+                    <div class="feature-card"><h3>Avanzado</h3><p>Una técnica de UX moderna y sofisticada.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 <strong>OnlyTWO</strong> Development. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

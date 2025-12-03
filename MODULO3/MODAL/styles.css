@@ -1,0 +1,360 @@
+/* =====================================
+   ESTILO CYBERPUNK - REPLICA EXACTA
+   ===================================== */
+
+:root {
+    --bg-body: #0a0a0a;       /* Negro profundo */
+    --bg-panel: #111111;      /* Gris casi negro para paneles */
+    --primary: #ff3d3d;       /* Rojo Neón */
+    --secondary: #00f2ff;     /* Cian Neón */
+    --text-white: #ffffff;
+    --text-gray: #888888;
+    
+    --font-heading: 'Orbitron', sans-serif;
+    --font-ui: 'Roboto', sans-serif;
+    --font-mono: 'Roboto Mono', monospace;
+    
+    --container-width: 1000px; /* Ancho fijo para alinear todo */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-body);
+    color: var(--text-white);
+    font-family: var(--font-ui);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* CLASE MAESTRA DE ALINEACIÓN */
+.container {
+    width: 90%;
+    max-width: var(--container-width);
+    margin: 0 auto; /* Esto centra horizontalmente los bloques */
+}
+
+/* --- NAVBAR --- */
+.navbar {
+    border-bottom: 1px solid var(--primary);
+    padding: 20px 0;
+    background-color: rgba(10, 10, 10, 0.95);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between; /* Logo a la izq, links a la der */
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-weight: 900;
+    font-size: 1.4rem;
+    color: var(--secondary);
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.nav-link {
+    color: var(--secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.nav-link:hover { color: var(--text-white); }
+
+.btn-nav {
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    padding: 6px 18px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+.btn-nav:hover {
+    background: var(--primary);
+    color: white;
+}
+
+/* --- HEADER --- */
+.main-header {
+    margin-top: 50px;
+    margin-bottom: 25px;
+}
+
+.page-title {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.text-primary { color: var(--primary); }
+.text-white { color: var(--text-white); }
+
+/* --- INFO BAR (Tira roja oscura) --- */
+.info-bar-strip {
+    background: linear-gradient(90deg, rgba(255, 61, 61, 0.15) 0%, transparent 100%);
+    border-left: 4px solid var(--primary);
+    padding: 15px 0;
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+.info-bar-content {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.info-group {
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+}
+
+.info-label {
+    color: var(--secondary);
+    font-weight: 700;
+    margin-right: 12px;
+}
+
+.info-value { color: var(--text-white); }
+
+/* --- PANEL DE CONTROL (Tarjeta central) --- */
+.control-panel {
+    background-color: var(--bg-panel);
+    border: 1px solid #222;
+    border-radius: 10px;
+    /* Efecto Glow sutil */
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); 
+    padding: 40px;
+    /* Borde decorativo lateral izquierdo como en BoxLab */
+    border-left: 4px solid var(--secondary);
+    position: relative;
+    overflow: hidden;
+}
+
+.panel-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+}
+
+.panel-subtitle {
+    font-family: var(--font-heading);
+    color: var(--text-white);
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.panel-body {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Centrar contenido interno del panel */
+.control-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente los hijos */
+    text-align: center;  /* Centra el texto */
+    width: 100%;
+}
+
+.panel-desc {
+    color: var(--text-gray);
+    line-height: 1.6;
+}
+
+.status-ok {
+    color: var(--secondary);
+    font-weight: bold;
+    font-family: var(--font-mono);
+}
+
+/* Botón grande central */
+.btn-open {
+    background: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    padding: 18px 50px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+.btn-open:hover {
+    background: var(--primary);
+    color: white;
+    box-shadow: 0 0 25px rgba(255, 61, 61, 0.4);
+    transform: translateY(-2px);
+}
+
+.shortcuts {
+    margin-top: 15px;
+    font-size: 0.8rem;
+    color: #555;
+    font-family: var(--font-mono);
+}
+
+kbd {
+    border: 1px solid #444;
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: var(--secondary);
+    background: rgba(0, 242, 255, 0.05);
+}
+
+/* --- MODAL (Perfectamente Centrado) --- */
+dialog.modal {
+    /* Reseteo de estilos nativos para control total */
+    border: none;
+    background: transparent;
+    padding: 0;
+    
+    /* Centrado absoluto */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    width: 90%;
+    max-width: 480px;
+    margin: 0;
+    overflow: visible;
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(3px);
+}
+
+.modal-wrapper {
+    background-color: #151515;
+    border: 1px solid var(--secondary);
+    box-shadow: 0 0 50px rgba(0, 242, 255, 0.15);
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+    animation: zoomIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes zoomIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.modal-header {
+    background: rgba(0, 242, 255, 0.05);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 242, 255, 0.2);
+}
+
+.modal-title {
+    font-family: var(--font-heading);
+    color: var(--secondary);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.btn-close {
+    background: none;
+    border: none;
+    color: #666;
+    font-size: 1.5rem;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.3s;
+}
+
+.btn-close:hover { color: var(--primary); }
+
+.modal-body {
+    padding: 40px 30px;
+}
+
+.modal-content-centered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.icon-box {
+    color: var(--secondary);
+    margin-bottom: 20px;
+}
+
+.highlight-text {
+    color: white;
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.modal-content-centered p {
+    color: var(--text-gray);
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+.modal-footer {
+    padding: 20px;
+    background: rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid #222;
+}
+
+.btn-action {
+    background: var(--secondary);
+    color: #000;
+    border: none;
+    padding: 12px 40px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+.btn-action:hover {
+    background: white;
+    box-shadow: 0 0 15px var(--secondary);
+}
+
+/* Decoración scanline */
+.scanline {
+    position: absolute;
+    top: 0;
+    left: 0

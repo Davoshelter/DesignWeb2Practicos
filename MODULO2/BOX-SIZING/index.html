@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box-Sizing Lab | OnlyTWO</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav class="navbar" id="mainNav">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">Box<span class="highlight">LAB</span></span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item"><a href="#lab" class="nav-link active">Laboratorio</a></li>
+                <li class="nav-item"><a href="#ejemplos" class="nav-link">Casos Reales</a></li>
+                <li class="nav-item"><a href="../../index.html" class="nav-link btn-volver">&larr; Volver</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="content-section" id="lab">
+        <div class="container">
+            <h1 class="section-title">Box-Sizing <span class="text-primary">Showdown</span></h1>
+            
+            <div class="student-info-panel">
+                <p class="info-row"><span class="label">Estudiante:</span> <span class="value">José David Gorena Nava</span></p>
+                <p class="info-row"><span class="label">Materia:</span> <span class="value">Diseño Web 2</span></p>
+            </div>
+
+            <div class="box-sizing-container">
+                <div class="controls-panel">
+                    <h2 class="panel-title">PANEL DE CONTROL //</h2>
+                    <div class="control-group">
+                        <label>Width (Ancho CSS)</label>
+                        <div class="slider-wrapper">
+                            <input type="range" id="width-slider" min="100" max="300" value="200" class="slider">
+                            <span id="width-value" class="slider-value">200px</span>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label>Padding (Relleno)</label>
+                        <div class="slider-wrapper">
+                            <input type="range" id="padding-slider" min="0" max="50" value="20" class="slider">
+                            <span id="padding-value" class="slider-value">20px</span>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label>Border (Borde)</label>
+                        <div class="slider-wrapper">
+                            <input type="range" id="border-slider" min="0" max="20" value="10" class="slider">
+                            <span id="border-value" class="slider-value">10px</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comparison-area">
+                    <div class="box-container container-danger">
+                        <h3><span class="badge red">DEFAULT</span> Content-Box</h3>
+                        <div class="demo-wrapper">
+                            <div class="demo-box content-box" id="content-box-demo">
+                                <span class="box-label">Content</span>
+                            </div>
+                        </div>
+                        <div class="math-panel danger-math" id="content-box-calc">
+                            </div>
+                        <p class="explanation">El tamaño total <strong>CRECE</strong> descontroladamente.</p>
+                    </div>
+
+                    <div class="box-container container-success">
+                        <h3><span class="badge cyan">PRO</span> Border-Box</h3>
+                        <div class="demo-wrapper">
+                            <div class="demo-box border-box" id="border-box-demo">
+                                <span class="box-label">Content</span>
+                            </div>
+                        </div>
+                        <div class="math-panel success-math" id="border-box-calc">
+                            </div>
+                        <p class="explanation">El tamaño total se mantiene <strong>FIJO</strong>.</p>
+                    </div>
+                </div>
+            </div>
+
+            <section class="real-world-examples" id="ejemplos">
+                <h2 class="section-title sub-title">Casos de Uso <span class="text-secondary">Real</span></h2>
+                
+                <div class="examples-grid">
+                    <div class="example-card">
+                        <h3>1. Inputs de Texto (100% Width)</h3>
+                        <p class="info-text">Si pones width: 100% y padding sin border-box, el input se saldrá del contenedor.</p>
+                        
+                        <div class="example-demo">
+                            <div class="input-wrapper">
+                                <label>Sin border-box (Se sale)</label>
+                                <input type="text" class="input-bad" placeholder="padding rompe el ancho" value="Width 100% + Padding">
+                            </div>
+                            <div class="input-wrapper">
+                                <label>Con border-box (Perfecto)</label>
+                                <input type="text" class="input-good" placeholder="padding interno" value="Width 100% incluído">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="example-card">
+                        <h3>2. Columnas 50% / 50%</h3>
+                        <p class="info-text">Dos columnas del 50% con padding. Sin border-box, la segunda columna cae abajo.</p>
+                        
+                        <div class="grid-demo-container">
+                            <div class="row bad-row">
+                                <div class="col-50 bad-col">50%</div>
+                                <div class="col-50 bad-col">50% (Cae)</div>
+                            </div>
+                            <p class="mini-label">❌ content-box (50% + padding > 50%)</p>
+
+                            <div class="row good-row">
+                                <div class="col-50 good-col">50%</div>
+                                <div class="col-50 good-col">50%</div>
+                            </div>
+                            <p class="mini-label">✅ border-box (Encajan perfecto)</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="best-practice">
+                <div class="code-header">
+                    <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                    <span class="filename">reset.css</span>
+                </div>
+                <h2>⭐ Solución Universal</h2>
+                <pre><code>* {
+    box-sizing: border-box; 
+    /* Aplica esto al inicio de tu CSS y olvida los cálculos */
+}</code></pre>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 <strong>OnlyTWO</strong> Development. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

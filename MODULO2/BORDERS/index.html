@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bordes High Perf | OnlyTWO</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav class="navbar" id="mainNav">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">Border<span class="highlight">LAB</span></span>
+            </a>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+                <span class="hamburger"></span>
+            </button>
+
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item"><a href="#proyectos" class="nav-link active">Laboratorio</a></li>
+                <li class="nav-item">
+                    <a href="../../index.html#proyectos" class="nav-link btn-volver">
+                        &larr; Volver
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="content-section" id="proyectos">
+        <div class="container">
+            <h1 class="section-title">Laboratorio de <span class="text-secondary">Bordes</span></h1>
+            
+            <div class="student-info-panel">
+                <p class="info-row"><span class="label">Estudiante:</span> <span class="value">José David Gorena Nava</span></p>
+                <p class="info-row"><span class="label">Materia:</span> <span class="value">Diseño Web 2</span></p>
+            </div>
+
+            <p class="lead">Exploración visual de propiedades <code>border</code> y <code>border-radius</code>.</p>
+
+            <div class="tabs-container">
+                <div class="tabs">
+                    <button class="tab-link active" data-tab="styles">ESTILOS COLORIDOS</button>
+                    <button class="tab-link" data-tab="radius">RADIO (RADIUS)</button>
+                    <button class="tab-link" data-tab="advanced">FX AVANZADO</button>
+                </div>
+            </div>
+
+            <div id="styles" class="tab-content active">
+                <div class="gallery-grid">
+                    <div class="gallery-item" style="border-style: solid;"><span class="item-label">solid</span></div>
+                    <div class="gallery-item" style="border-style: dashed;"><span class="item-label">dashed</span></div>
+                    <div class="gallery-item" style="border-style: dotted;"><span class="item-label">dotted</span></div>
+                    <div class="gallery-item" style="border-style: double; border-width: 6px;"><span class="item-label">double</span></div>
+                    <div class="gallery-item" style="border-style: groove; border-width: 6px;"><span class="item-label">groove</span></div>
+                    <div class="gallery-item" style="border-style: ridge; border-width: 6px;"><span class="item-label">ridge</span></div>
+                    <div class="gallery-item" style="border-style: inset; border-width: 6px;"><span class="item-label">inset</span></div>
+                    <div class="gallery-item" style="border-style: outset; border-width: 6px;"><span class="item-label">outset</span></div>
+                </div>
+            </div>
+
+            <div id="radius" class="tab-content">
+                <div class="gallery-grid">
+                    <div class="gallery-item radius-item" style="border-radius: 10px;"><span class="item-label">10px</span></div>
+                    <div class="gallery-item radius-item" style="border-radius: 25px;"><span class="item-label">25px</span></div>
+                    <div class="gallery-item radius-item" style="border-radius: 50%;"><span class="item-label">50% (Circle)</span></div>
+                    <div class="gallery-item radius-item" style="border-radius: 10px 40px;"><span class="item-label">Asimétrico</span></div>
+                    <div class="gallery-item radius-item" style="border-radius: 50% 50% 0 0;"><span class="item-label">Domo</span></div>
+                    <div class="gallery-item radius-item pill"><span class="item-label">Pill / Botón</span></div>
+                </div>
+            </div>
+
+            <div id="advanced" class="tab-content">
+                <div class="gallery-grid">
+                    <div class="gallery-item gradient-border"><span class="item-label">Gradiente RGB</span></div>
+                    <div class="gallery-item glowing-border"><span class="item-label">Neón Glow</span></div>
+                    <div class="gallery-item animated-border"><span class="item-label">Scanner Animado</span></div>
+                </div>
+            </div>
+
+            <div class="live-editor-container">
+                <div class="editor-header">
+                    <span class="editor-dot red"></span>
+                    <span class="editor-dot yellow"></span>
+                    <span class="editor-dot green"></span>
+                    <h2 class="editor-title">LIVE CSS EDITOR //</h2>
+                </div>
+                
+                <div class="editor-grid">
+                    <div class="editor-controls">
+                        <div class="control-group">
+                            <label for="border-width">border-width</label>
+                            <input type="text" id="border-width" value="4px">
+                        </div>
+                        <div class="control-group">
+                            <label for="border-style">border-style</label>
+                            <select id="border-style" class="input-select">
+                                <option value="solid">solid</option>
+                                <option value="dashed">dashed</option>
+                                <option value="dotted">dotted</option>
+                                <option value="double">double</option>
+                            </select>
+                        </div>
+                        <div class="control-group">
+                            <label for="border-color">border-color</label>
+                            <input type="color" id="border-color" value="#00f2ff" style="height:45px; cursor:pointer;">
+                        </div>
+                        <div class="control-group">
+                            <label for="border-radius">border-radius</label>
+                            <input type="text" id="border-radius" value="12px">
+                        </div>
+                    </div>
+                    
+                    <div class="editor-preview-area">
+                        <div id="preview-box">
+                            <span>PREVIEW</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 <strong>OnlyTWO</strong> Development. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
