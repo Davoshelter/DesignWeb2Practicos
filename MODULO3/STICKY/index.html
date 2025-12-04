@@ -6,29 +6,41 @@
     <meta name="description" content="Demostración de diferentes tipos de navbars pegajosos (sticky).">
     <title>OnlyTWO | Laboratorio de NavBars Sticky</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
     <nav class="navbar navbar-main">
-        <div class="container">
+        <div class="container navbar-container">
             <a href="../../index.html" class="logo">
                 <span class="logo-icon">⚡</span>
                 <span class="logo-text">Laboratorio<span class="highlight">NAV</span></span>
             </a>
-            <a href="../../index.html" class="nav-link btn-volver">← Volver al Portfolio</a>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+                <span class="hamburger"></span>
+            </button>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#navBasic" class="nav-link">Básico</a></li>
+                <li><a href="#navColorChange" class="nav-link">Color</a></li>
+                <li><a href="#navShrink" class="nav-link">Shrink</a></li>
+                <li><a href="#navReveal" class="nav-link">Reveal</a></li>
+                <li><a href="../../index.html" class="nav-link btn-volver">← Volver</a></li>
+            </ul>
         </div>
     </nav>
 
     <header class="hero">
-        <div class="container">
+        <div class="container hero-container">
             <h1>Laboratorio de NavBars Pegajosas</h1>
             <p>Una colección de diferentes implementaciones de <code>position: sticky</code>.</p>
+            <p style="margin-top: 10px; font-size: 0.9rem; opacity: 0.8;">(Haz scroll hasta el final para una sorpresa 🎉)</p>
         </div>
     </header>
 
-    <!-- ========= SECCIÓN 1: STICKY BÁSICO ========= -->
-    <section class="demo-section">
+    <section class="demo-section" id="sectionBasic">
         <nav class="navbar navbar-basic" id="navBasic">
             <div class="container">
                 <span class="navbar-title">1. Sticky Básico</span>
@@ -36,8 +48,8 @@
         </nav>
         <div class="content-block">
             <div class="container">
-                <p>Este es el ejemplo más simple. La barra de navegación se desplaza con la página hasta que llega a la parte superior, donde se queda "pegada". No requiere JavaScript, solo <code>position: sticky; top: 0;</code>.</p>
-                <img src="https://via.placeholder.com/900x400.png/0f1011/00f2ff?text=Ejemplo+Visual+1" alt="Placeholder Image 1" class="img-placeholder">
+                <p>Este es el ejemplo más simple. La barra de navegación se desplaza con la página hasta que llega a la parte superior, donde se queda "pegada".</p>
+                <img src="https://via.placeholder.com/900x400.png/0f1011/00f2ff?text=Sticky+Basico" alt="Ejemplo Visual 1" class="img-placeholder">
                 <div class="feature-grid">
                     <div class="feature-card"><h3>Simplicidad</h3><p>Fácil de implementar y muy robusto.</p></div>
                     <div class="feature-card"><h3>Rendimiento</h3><p>Nativo de CSS, no sobrecarga el navegador.</p></div>
@@ -47,7 +59,6 @@
         </div>
     </section>
 
-    <!-- ========= SECCIÓN 2: CAMBIO DE ESTILO ========= -->
     <section class="demo-section">
         <nav class="navbar navbar-color-change" id="navColorChange">
             <div class="container">
@@ -56,8 +67,8 @@
         </nav>
         <div class="content-block">
             <div class="container">
-                <p>Esta barra empieza siendo semi-transparente. Al hacer scroll, una clase <code>.scrolled</code> se añade vía JavaScript, cambiando su fondo a un color sólido y añadiendo una sombra. Muy útil sobre cabeceras con imágenes.</p>
-                <img src="https://via.placeholder.com/900x400.png/0f1011/ff2e2e?text=Ejemplo+Visual+2" alt="Placeholder Image 2" class="img-placeholder">
+                <p>Esta barra empieza siendo semi-transparente. Al hacer scroll, se añade una sombra suave y cambia el fondo.</p>
+                <img src="https://via.placeholder.com/900x400.png/0f1011/ff2e2e?text=Cambio+de+Estilo" alt="Ejemplo Visual 2" class="img-placeholder">
                 <div class="feature-grid">
                     <div class="feature-card"><h3>Dinamismo</h3><p>Crea una transición visual clara.</p></div>
                     <div class="feature-card"><h3>Legibilidad</h3><p>Asegura que el texto del navbar se lea bien.</p></div>
@@ -67,7 +78,6 @@
         </div>
     </section>
 
-    <!-- ========= SECCIÓN 3: REDUCCIÓN DE TAMAÑO ========= -->
     <section class="demo-section">
         <nav class="navbar navbar-shrink" id="navShrink">
             <div class="container">
@@ -77,8 +87,8 @@
         </nav>
         <div class="content-block">
             <div class="container">
-                <p>Al hacer scroll, esta barra reduce su altura (padding) y el tamaño de la fuente. Es una técnica elegante para maximizar el espacio visible del contenido. También se controla con una clase <code>.scrolled</code> desde JavaScript.</p>
-                <img src="https://via.placeholder.com/900x400.png/0f1011/4834d4?text=Ejemplo+Visual+3" alt="Placeholder Image 3" class="img-placeholder">
+                <p>Al hacer scroll, esta barra reduce su altura (padding) y el tamaño de la fuente. Es una técnica elegante para maximizar el espacio visible.</p>
+                <img src="https://via.placeholder.com/900x400.png/0f1011/4834d4?text=Efecto+Shrink" alt="Ejemplo Visual 3" class="img-placeholder">
                 <div class="feature-grid">
                     <div class="feature-card"><h3>Eficiencia</h3><p>Menos espacio de navbar, más para el contenido.</p></div>
                     <div class="feature-card"><h3>Elegancia</h3><p>Una micro-interacción que denota calidad.</p></div>
@@ -88,7 +98,6 @@
         </div>
     </section>
     
-    <!-- ========= SECCIÓN 4: APARECE AL SUBIR ========= -->
     <section class="demo-section">
         <nav class="navbar navbar-reveal" id="navReveal">
              <div class="container">
@@ -97,8 +106,8 @@
         </nav>
         <div class="content-block">
              <div class="container">
-                <p>Esta barra se oculta cuando haces scroll hacia abajo para no estorbar, pero reaparece inmediatamente en cuanto empiezas a subir. Requiere JavaScript para detectar la dirección del scroll.</p>
-                <img src="https://via.placeholder.com/900x400.png/0f1011/e84393?text=Ejemplo+Visual+4" alt="Placeholder Image 4" class="img-placeholder">
+                <p>Esta barra se oculta cuando haces scroll hacia abajo para no estorbar, pero reaparece inmediatamente en cuanto empiezas a subir.</p>
+                <img src="https://via.placeholder.com/900x400.png/0f1011/e84393?text=Reveal+On+Scroll" alt="Ejemplo Visual 4" class="img-placeholder">
                 <div class="feature-grid">
                     <div class="feature-card"><h3>Inmersivo</h3><p>La interfaz se quita del medio al leer.</p></div>
                     <div class="feature-card"><h3>Intuitivo</h3><p>Reaparece cuando el usuario muestra intención de navegar.</p></div>

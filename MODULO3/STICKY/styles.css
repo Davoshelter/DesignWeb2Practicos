@@ -3,263 +3,205 @@
    ===================================== */
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;700&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-    --color-primary: #ff2e2e;      /* Rojo Neón */
-    --color-secondary: #00f2ff;    /* Azul Turquesa */
-    --color-bg-dark: #0f1011;      /* Casi Negro */
-    --color-lead-dark: #2d3436;    /* Plomo Oscuro */
+    --color-primary: #ff2e2e;
+    --color-secondary: #00f2ff;
+    --color-bg-dark: #0f1011;
+    --color-lead-dark: #2d3436;
     --color-text: #ffffff;
+    --nav-height: 70px;
     --transition: all 0.3s ease;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
+html { scroll-behavior: smooth; }
 body {
     font-family: 'Roboto', sans-serif;
     background-color: var(--color-bg-dark);
     color: var(--color-text);
     line-height: 1.7;
+    overflow-x: hidden;
 }
 
 .container {
     max-width: 900px;
     margin: 0 auto;
     padding: 0 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     width: 100%;
 }
 
+/* =====================================
+   HEADER & HERO
+   ===================================== */
 .hero {
-    height: 50vh;
+    height: 60vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    flex-direction: column;
-    background: linear-gradient(135deg, var(--color-lead-dark) 0%, #000000 100%);
+    background: radial-gradient(circle at center, #1a1a1a 0%, #000000 100%);
     padding: 2rem;
+    border-bottom: 2px solid var(--color-lead-dark);
 }
-
+.hero-container {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+}
 .hero h1 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 2.5rem;
-    color: var(--color-secondary);
-    text-shadow: 0 0 15px rgba(0, 242, 255, 0.4);
+    font-family: 'Orbitron', sans-serif; font-size: 2.5rem; color: var(--color-secondary);
+    text-shadow: 0 0 15px rgba(0, 242, 255, 0.4); margin-bottom: 1rem;
 }
-
-.hero p {
-    font-size: 1.2rem;
-    margin-top: 1rem;
-}
-
 code {
-    font-family: 'Roboto Mono', monospace;
-    background-color: rgba(0, 242, 255, 0.1);
-    color: var(--color-secondary);
-    padding: 2px 5px;
-    border-radius: 3px;
+    font-family: 'Roboto Mono', monospace; background-color: rgba(0, 242, 255, 0.1);
+    color: var(--color-secondary); padding: 2px 5px; border-radius: 3px;
 }
 
 /* =====================================
-   ESTILOS GENERALES DE NAV & DEMO
+   NAVBAR PRINCIPAL (CON MENÚ)
    ===================================== */
 .navbar {
-    padding: 20px 0;
-    width: 100%;
-    z-index: 1000;
-    transition: var(--transition);
-    border-bottom: 1px solid #333;
+    width: 100%; z-index: 1000; transition: var(--transition);
     font-family: 'Orbitron', sans-serif;
 }
 
-.navbar-title {
-    font-weight: bold;
-    font-size: 1.2rem;
-}
-
-.demo-section {
-    padding: 4rem 0;
-    border-bottom: 4px dashed #222;
-}
-
-.content-block {
-    padding-top: 4rem;
-}
-
-.content-block .container {
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-/* NAVBAR PRINCIPAL (para volver) */
 .navbar-main {
-    background-color: #000;
+    background-color: rgba(0, 0, 0, 0.95);
     border-bottom: 2px solid var(--color-primary);
+    position: sticky; top: 0; padding: 0; height: var(--nav-height);
+}
+
+.navbar-container {
+    height: 100%; display: flex; justify-content: space-between; align-items: center;
 }
 
 .logo {
-    text-decoration: none;
-    color: var(--color-secondary);
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.2rem;
-    font-weight: 900;
+    text-decoration: none; color: var(--color-secondary); font-size: 1.2rem; font-weight: 900; z-index: 1002;
+    display: flex; align-items: center; gap: 8px;
 }
+.logo .highlight { color: var(--color-primary); }
 
-.logo .highlight {
-    color: var(--color-primary);
+/* Menú de Escritorio */
+.nav-menu {
+    display: flex; list-style: none; gap: 20px; align-items: center;
 }
+.nav-link {
+    color: white; text-decoration: none; font-size: 0.9rem; transition: var(--transition);
+}
+.nav-link:hover { color: var(--color-secondary); text-shadow: 0 0 8px var(--color-secondary); }
 
 .btn-volver {
-    border: 1px solid var(--color-primary);
-    padding: 8px 16px;
-    border-radius: 4px;
-    color: var(--color-primary) !important;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 0.8rem;
+    border: 1px solid var(--color-primary); padding: 6px 15px; border-radius: 4px;
+    color: var(--color-primary) !important; font-weight: bold;
 }
-
-.btn-volver:hover {
-    background: var(--color-primary);
-    color: white !important;
-}
-
+.btn-volver:hover { background: var(--color-primary); color: white !important; }
 
 /* =====================================
-   1. NAVBAR BÁSICO
+   MENÚ HAMBURGUESA (MÓVIL)
    ===================================== */
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; z-index: 1002; }
+.hamburger { display: block; width: 25px; height: 3px; background: white; position: relative; transition: var(--transition); }
+.hamburger::before, .hamburger::after { content: ''; position: absolute; width: 100%; height: 100%; background: white; transition: var(--transition); }
+.hamburger::before { top: -8px; }
+.hamburger::after { top: 8px; }
+
+.nav-toggle.active .hamburger { background: transparent; }
+.nav-toggle.active .hamburger::before { top: 0; transform: rotate(45deg); background: var(--color-primary); }
+.nav-toggle.active .hamburger::after { top: 0; transform: rotate(-45deg); background: var(--color-primary); }
+
+@media (max-width: 768px) {
+    .nav-toggle { display: block; }
+    
+    .nav-menu {
+        position: fixed; top: 0; right: -100%;
+        width: 100%; height: 100vh;
+        background-color: rgba(15, 16, 17, 0.98);
+        flex-direction: column; justify-content: center;
+        transition: 0.4s ease-in-out; z-index: 1001;
+        border-left: 2px solid var(--color-primary);
+    }
+    .nav-menu.active { right: 0; }
+    .nav-link { font-size: 1.5rem; margin: 15px 0; display: block; }
+}
+
+/* =====================================
+   DEMO NAVBARS & SOMBRAS
+   ===================================== */
+.demo-section { padding: 4rem 0; border-bottom: 4px dashed #222; }
+.navbar-title { font-weight: bold; font-size: 1.2rem; }
+
+/* NAVBAR 1: BÁSICO (Con sombra añadida por JS) */
 .navbar-basic {
-    position: sticky;
-    top: 0;
-    background-color: #1e272e;
+    position: sticky; top: var(--nav-height); /* Se pega debajo del nav principal */
+    background-color: #1e272e; padding: 20px 0;
     border-bottom: 2px solid var(--color-secondary);
+    transition: box-shadow 0.3s ease;
+}
+.navbar-basic.scrolled {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Sombra suave solicitada */
 }
 
-/* =====================================
-   2. NAVBAR CAMBIO DE COLOR
-   ===================================== */
+/* NAVBAR 2: COLOR CHANGE */
 .navbar-color-change {
-    position: sticky;
-    top: 0;
-    background-color: transparent;
+    position: sticky; top: var(--nav-height);
+    padding: 20px 0; background-color: transparent;
     border-bottom-color: transparent;
 }
+.navbar-color-change .container { display: flex; align-items: center; }
 
 .navbar-color-change.scrolled {
-    background-color: rgba(45, 52, 54, 0.9);
+    background-color: rgba(45, 52, 54, 0.95);
     backdrop-filter: blur(5px);
     border-bottom: 2px solid var(--color-primary);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    box-shadow: 0 10px 25px rgba(255, 46, 46, 0.15); /* Sombra Roja Suave */
 }
 
-/* =====================================
-   3. NAVBAR SHRINK
-   ===================================== */
+/* NAVBAR 3: SHRINK */
 .navbar-shrink {
-    position: sticky;
-    top: 0;
-    padding: 30px 0;
-    background-color: #4834d4;
+    position: sticky; top: var(--nav-height);
+    padding: 30px 0; background-color: #4834d4;
     border-bottom: 2px solid #341f97;
 }
-
-.navbar-shrink .logo-shrink {
-    font-size: 1.5rem;
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    transition: var(--transition);
-}
+.navbar-shrink .container { display: flex; justify-content: space-between; align-items: center; }
+.navbar-shrink .logo-shrink { font-size: 1.5rem; text-decoration: none; color: white; font-weight: bold; transition: var(--transition); }
 
 .navbar-shrink.scrolled {
     padding: 10px 0;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.4); /* Sombra */
 }
+.navbar-shrink.scrolled .logo-shrink { font-size: 1rem; }
 
-.navbar-shrink.scrolled .logo-shrink {
-    font-size: 1rem;
-}
-
-
-/* =====================================
-   4. NAVBAR REVEAL ON SCROLL UP
-   ===================================== */
+/* NAVBAR 4: REVEAL */
 .navbar-reveal {
-    position: sticky;
-    top: 0;
-    background-color: #e84393;
+    position: sticky; top: var(--nav-height);
+    background-color: #e84393; padding: 20px 0;
     border-bottom: 2px solid #d63031;
-    transition: transform 0.4s ease;
+    transition: transform 0.4s ease, box-shadow 0.3s ease;
+    z-index: 900;
 }
-
-.navbar-reveal.hidden {
-    transform: translateY(-100%);
-}
+.navbar-reveal.scrolled { box-shadow: 0 10px 20px rgba(0,0,0,0.4); }
+.navbar-reveal.hidden { transform: translateY(-200%); }
 
 /* =====================================
-   NUEVOS ESTILOS DE CONTENIDO
+   CONTENIDO & CARDS
    ===================================== */
-
+.content-block { padding-top: 2rem; }
 .img-placeholder {
-    width: 100%;
-    height: auto;
-    max-height: 400px;
-    object-fit: cover;
-    border-radius: 8px;
-    border: 1px solid #444;
-    margin: 2rem 0;
-    background-color: #222; /* Color de fondo por si la imagen no carga */
+    width: 100%; height: auto; max-height: 400px; object-fit: cover;
+    border-radius: 8px; border: 1px solid #444; margin: 2rem 0;
+    background-color: #222;
 }
 
 .feature-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-    width: 100%;
-    margin-top: 2rem;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem; width: 100%; margin-top: 2rem;
 }
-
 .feature-card {
-    background-color: var(--color-lead-dark);
-    padding: 1.5rem;
-    border-radius: 6px;
-    border-top: 3px solid var(--color-secondary);
+    background-color: var(--color-lead-dark); padding: 1.5rem;
+    border-radius: 6px; border-top: 3px solid var(--color-secondary);
     transition: var(--transition);
 }
+.feature-card:hover { transform: translateY(-5px); background-color: #333; }
+.feature-card h3 { font-family: 'Orbitron', sans-serif; color: var(--color-secondary); margin-bottom: 0.5rem; }
 
-.feature-card:hover {
-    transform: translateY(-5px);
-    background-color: #333;
-}
-
-.feature-card h3 {
-    font-family: 'Orbitron', sans-serif;
-    color: var(--color-secondary);
-    margin-bottom: 0.5rem;
-}
-
-
-/* =====================================
-   FOOTER
-   ===================================== */
-.footer {
-    background-color: black;
-    padding: 3rem 0;
-    text-align: center;
-    border-top: 1px solid #333;
-    font-size: 0.9rem;
-    color: #666;
-}
-
-.footer .container {
-    justify-content: center;
-}
+/* FOOTER */
+.footer { background-color: black; padding: 3rem 0; text-align: center; border-top: 1px solid #333; color: #666; }
