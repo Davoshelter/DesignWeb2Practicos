@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solución: Hero con Overlay</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="page-header">
+        <a href="../../index.html" class="btn-back"><span>&larr; Volver</span></a>
+    </header>
+
+    <section class="hero">
+        <!-- Overlay semitransparente -->
+        <div class="hero-overlay"></div>
+        
+        <!-- Contenido centrado -->
+        <div class="hero-content">
+            <span class="hero-badge">Módulo 3 :: Ejercicio</span>
+            <h1>Hero Overlay <span style="color: var(--color-primary);">Tech</span></h1>
+            <p>Adaptación del ejercicio de Hero con Overlay, aplicando un tema futurista y colores neón sobre un fondo con efecto parallax.</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary"><span>Explorar</span></button>
+                <button class="btn btn-secondary"><span>Contactar</span></button>
+            </div>
+        </div>
+        
+        <footer class="hero-footer-info">
+            <p><strong>Estudiante:</strong> José David Gorena Nava</p>
+            <p><strong>Materia:</strong> Diseño Web 2</p>
+        </footer>
+    </section>
+
+    <!-- Sección adicional para demostrar el scroll -->
+    <section class="content-section">
+        <div class="content-container">
+            <h2>Conceptos Aplicados</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">🔌</div>
+                    <h3>Overlay y Z-Index</h3>
+                    <p>Una capa semitransparente sobre la imagen de fondo para mejorar la legibilidad del texto.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🔩</div>
+                    <h3>Flexbox</h3>
+                    <p>Utilizado para centrar vertical y horizontalmente el contenido principal del hero.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">⚙️</div>
+                    <h3>Position Absolute</h3>
+                    <p>Elementos como el header y el footer se posicionan de forma absoluta dentro del contenedor.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

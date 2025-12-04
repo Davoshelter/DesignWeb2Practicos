@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solución: Navbar Flexbox Responsive</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar sticky con flexbox -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-container">
+            <!-- Logo -->
+            <div class="navbar-logo">
+                <a href="#inicio">
+                    <span class="logo-icon">⚡</span>
+                    <span class="logo-text">Only<span class="highlight">TWO</span></span>
+                </a>
+            </div>
+
+            <!-- Menú de navegación -->
+            <ul class="navbar-menu" id="navbarMenu">
+                <li><a href="#inicio" class="nav-link active">Inicio</a></li>
+                <li><a href="#info" class="nav-link">Info</a></li>
+            </ul>
+
+            <!-- Botones de acción -->
+            <div class="navbar-actions">
+                <button class="btn btn-login"><span>Login</span></button>
+                <button class="btn btn-signup"><span>Register</span></button>
+            </div>
+
+            <!-- Botón hamburguesa para móviles -->
+            <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+    
+    <div class="page-header">
+        <a href="../../index.html" class="btn-back"><span>&larr; Volver al Portafolio</span></a>
+        <h1>Navbar <span style="color: var(--color-primary);">Flexbox</span></h1>
+        <p class="lead-description">
+            Ejercicio de Módulo 4 adaptado. Una barra de navegación responsive que utiliza Flexbox para alinear sus elementos. La funcionalidad del script original se mantiene.
+        </p>
+        <div class="student-info">
+            <p><strong>Estudiante:</strong> José David Gorena Nava</p>
+            <p><strong>Materia:</strong> Diseño Web 2</p>
+        </div>
+    </div>
+
+
+    <!-- Contenido principal -->
+    <main>
+        <!-- Sección Inicio -->
+        <section id="inicio" class="section section-hero">
+            <div class="section-content">
+                <h1>Navbar Adaptada</h1>
+                <p>La funcionalidad de toggle y scroll spy se ha mantenido.</p>
+            </div>
+        </section>
+
+        <!-- Sección Info -->
+        <section id="info" class="section">
+            <div class="section-content">
+                <h2>Sección de Información</h2>
+                <p style="text-align: center; color: var(--color-text-gray);">El scroll-spy del script original sigue funcionando. Al desplazarte hacia esta sección, el enlace "Info" en la barra de navegación debería resaltarse.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 OnlyTWO Development. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

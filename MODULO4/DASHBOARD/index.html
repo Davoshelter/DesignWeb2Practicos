@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solución: Dashboard Admin</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Cyber-Admin</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active">
+                    <span class="nav-icon">📊</span>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="nav-icon">📈</span>
+                    <span>Analíticas</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="nav-icon">💾</span>
+                    <span>Bases de Datos</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="nav-icon">🤖</span>
+                    <span>Nodos</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="nav-icon">🔥</span>
+                    <span>Firewall</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="nav-icon">⚙️</span>
+                    <span>Configuración</span>
+                </a>
+                 <a href="../../index.html" class="nav-item">
+                    <span class="nav-icon">&larr;</span>
+                    <span>Volver</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Header -->
+        <header class="header">
+            <div class="header-search">
+                <input type="search" placeholder="Buscar nodo, IP, usuario...">
+            </div>
+            <div class="header-actions">
+                <button class="icon-btn">🔔<span class="badge">3</span></button>
+                <button class="icon-btn">✉️<span class="badge">5</span></button>
+                <div class="user-profile">
+                    <img src="https://i.pravatar.cc/40?u=admin" alt="Usuario">
+                    <span>Admin</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="page-header">
+                <h1>Dashboard Principal</h1>
+                <button class="btn-primary">+ Nuevo Nodo</button>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">🤖</div>
+                    <div class="stat-info">
+                        <h3>2,543</h3>
+                        <p>Nodos Activos</p>
+                        <span class="stat-change positive">+12.5%</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">⚡</div>
+                    <div class="stat-info">
+                        <h3>98.2%</h3>
+                        <p>Uptime</p>
+                        <span class="stat-change positive">+0.2%</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🔥</div>
+                    <div class="stat-info">
+                        <h3>1,234</h3>
+                        <p>Alertas</p>
+                        <span class="stat-change negative">-3.1%</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">💾</div>
+                    <div class="stat-info">
+                        <h3>4.8 PB</h3>
+                        <p>Data Almacenada</p>
+                        <span class="stat-change positive">+0.3 PB</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts and Tables -->
+            <div class="content-grid">
+                <!-- Recent Activity -->
+                <div class="card">
+                    <h3>Actividad del Sistema</h3>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-icon">🤖</div>
+                            <div class="activity-content">
+                                <p><strong>Nuevo nodo conectado</strong></p>
+                                <span>Hace 5 minutos</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon">🔥</div>
+                            <div class="activity-content">
+                                <p><strong>Intento de intrusión bloqueado</strong></p>
+                                <span>Hace 15 minutos</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon">💾</div>
+                            <div class="activity-content">
+                                <p><strong>Backup de base de datos completado</strong></p>
+                                <span>Hace 1 hora</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon">📈</div>
+                            <div class="activity-content">
+                                <p><strong>Pico de transferencia de datos detectado</strong></p>
+                                <span>Hace 2 horas</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Top Products -->
+                <div class="card">
+                    <h3>Nodos con Mayor Carga</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Nodo ID</th>
+                                <th>CPU</th>
+                                <th>RAM</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>zeta-9</td>
+                                <td>98%</td>
+                                <td>75%</td>
+                            </tr>
+                            <tr>
+                                <td>alpha-3</td>
+                                <td>92%</td>
+                                <td>81%</td>
+                            </tr>
+                            <tr>
+                                <td>omega-7</td>
+                                <td>85%</td>
+                                <td>60%</td>
+                            </tr>
+                            <tr>
+                                <td>gamma-1</td>
+                                <td>79%</td>
+                                <td>72%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Sales Chart (simulated) -->
+                <div class="card card-full">
+                    <h3>Transferencia de Datos (TB)</h3>
+                    <div class="chart-container">
+                        <div class="bar-chart">
+                            <div class="bar" style="height: 60%"><span>Ene</span></div>
+                            <div class="bar" style="height: 75%"><span>Feb</span></div>
+                            <div class="bar" style="height: 55%"><span>Mar</span></div>
+                            <div class="bar" style="height: 85%"><span>Abr</span></div>
+                            <div class="bar" style="height: 70%"><span>May</span></div>
+                            <div class="bar" style="height: 90%"><span>Jun</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

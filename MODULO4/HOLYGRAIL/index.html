@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solución: Holy Grail Layout</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="page-header">
+            <a href="../../index.html" class="btn-back"><span>&larr; Volver al Portafolio</span></a>
+            <h1>Holy Grail <span>Layout</span></h1>
+            <p class="subtitle">Adaptación del layout clásico "Santo Grial" con CSS Grid y un tema futurista.</p>
+        </header>
+
+        <div class="holy-grail">
+            <header class="header">
+                <h1>CyberNet Portal</h1>
+            </header>
+            
+            <nav class="nav">
+                <h3>Navegación</h3>
+                <ul>
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="#">Data Streams</a></li>
+                    <li><a href="#">Anomalías</a></li>
+                    <li><a href="#">Protocolos</a></li>
+                    <li><a href="#">Terminal</a></li>
+                </ul>
+            </nav>
+            
+            <main class="main">
+                <article>
+                    <h2>GRID-TEMPLATE-AREAS</h2>
+                    <p>El layout "Holy Grail" se implementa de forma elegante y semántica utilizando <code>grid-template-areas</code>. Cada sección principal de la página (header, nav, main, sidebar, footer) es un "área" nombrada en el contenedor principal.</p>
+                    <p>Esta técnica permite una reestructuración completa para vistas móviles simplemente redefiniendo las áreas dentro de una media query, lo que proporciona un control declarativo y muy legible sobre el layout en diferentes breakpoints.</p>
+                </article>
+            </main>
+            
+            <aside class="sidebar">
+                <h3>Estado del Sistema</h3>
+                <div class="widget">
+                    <h4>Conexión Neuronal</h4>
+                    <p>Estado: <span style="color: var(--color-secondary);">Estable</span></p>
+                </div>
+                <div class="widget">
+                    <h4>Integridad del Núcleo</h4>
+                    <p>99.8%</p>
+                </div>
+            </aside>
+            
+            <footer class="footer">
+                <p>&copy; 2025 OnlyTWO Systems. Todos los derechos reservados.</p>
+            </footer>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
