@@ -1,360 +1,262 @@
 /* =====================================
-   ESTILO CYBERPUNK - REPLICA EXACTA
+   ESTILO CYBERPUNK - UPGRADE PRO
    ===================================== */
 
 :root {
-    --bg-body: #0a0a0a;       /* Negro profundo */
-    --bg-panel: #111111;      /* Gris casi negro para paneles */
-    --primary: #ff3d3d;       /* Rojo Neón */
+    --bg-body: #050505;
+    --bg-panel: #111111;
+    --primary: #ff2a2a;       /* Rojo más intenso */
     --secondary: #00f2ff;     /* Cian Neón */
     --text-white: #ffffff;
-    --text-gray: #888888;
+    --text-gray: #a0a0a0;
     
     --font-heading: 'Orbitron', sans-serif;
     --font-ui: 'Roboto', sans-serif;
     --font-mono: 'Roboto Mono', monospace;
     
-    --container-width: 1000px; /* Ancho fijo para alinear todo */
+    --container-width: 1000px;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
     background-color: var(--bg-body);
+    /* Fondo de rejilla sutil para toda la página */
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
     color: var(--text-white);
     font-family: var(--font-ui);
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+    display: flex; flex-direction: column;
 }
 
-/* CLASE MAESTRA DE ALINEACIÓN */
-.container {
-    width: 90%;
-    max-width: var(--container-width);
-    margin: 0 auto; /* Esto centra horizontalmente los bloques */
-}
+.container { width: 90%; max-width: var(--container-width); margin: 0 auto; }
 
-/* --- NAVBAR --- */
+/* --- NAVBAR & HEADER (Mantenidos y pulidos) --- */
 .navbar {
-    border-bottom: 1px solid var(--primary);
+    border-bottom: 1px solid rgba(255, 42, 42, 0.5);
     padding: 20px 0;
-    background-color: rgba(10, 10, 10, 0.95);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    width: 100%;
+    background-color: rgba(5, 5, 5, 0.95);
+    position: sticky; top: 0; z-index: 1000;
+    backdrop-filter: blur(5px);
 }
 
-.nav-content {
-    display: flex;
-    justify-content: space-between; /* Logo a la izq, links a la der */
-    align-items: center;
-}
+.nav-content { display: flex; justify-content: space-between; align-items: center; }
 
 .logo {
     font-family: var(--font-heading);
-    font-weight: 900;
-    font-size: 1.4rem;
-    color: var(--secondary);
-    text-decoration: none;
-    letter-spacing: 1px;
+    font-weight: 900; font-size: 1.4rem; color: var(--secondary);
+    text-decoration: none; letter-spacing: 1px;
+    text-shadow: 0 0 10px rgba(0, 242, 255, 0.4);
 }
 
-.nav-links {
-    display: flex;
-    gap: 25px;
-    align-items: center;
-}
-
-.nav-link {
-    color: var(--secondary);
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: color 0.3s;
-}
-
-.nav-link:hover { color: var(--text-white); }
+.nav-links { display: flex; gap: 20px; align-items: center; }
+.nav-link { color: var(--secondary); text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
+.nav-link:hover { color: white; text-shadow: 0 0 8px white; }
 
 .btn-nav {
-    border: 1px solid var(--primary);
-    color: var(--primary);
-    padding: 6px 18px;
-    text-decoration: none;
-    font-size: 0.85rem;
-    border-radius: 4px;
-    transition: all 0.3s;
+    border: 1px solid var(--primary); color: var(--primary);
+    padding: 6px 16px; text-decoration: none; font-size: 0.8rem; border-radius: 2px;
+    transition: 0.3s; font-family: var(--font-heading);
 }
+.btn-nav:hover { background: var(--primary); color: black; box-shadow: 0 0 15px var(--primary); }
 
-.btn-nav:hover {
-    background: var(--primary);
-    color: white;
-}
-
-/* --- HEADER --- */
-.main-header {
-    margin-top: 50px;
-    margin-bottom: 25px;
-}
-
+.main-header { margin-top: 50px; margin-bottom: 25px; text-align: center; }
 .page-title {
-    font-family: var(--font-heading);
-    font-size: 2.2rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    font-family: var(--font-heading); font-size: 2.5rem; letter-spacing: 4px;
+    text-shadow: 2px 2px 0px rgba(255, 42, 42, 0.3);
 }
 
 .text-primary { color: var(--primary); }
 .text-white { color: var(--text-white); }
 
-/* --- INFO BAR (Tira roja oscura) --- */
+/* --- INFO BAR --- */
 .info-bar-strip {
-    background: linear-gradient(90deg, rgba(255, 61, 61, 0.15) 0%, transparent 100%);
-    border-left: 4px solid var(--primary);
-    padding: 15px 0;
-    margin-bottom: 50px;
-    width: 100%;
+    background: linear-gradient(90deg, rgba(255, 42, 42, 0.1) 0%, transparent 100%);
+    border-left: 3px solid var(--primary);
+    padding: 12px 0; margin-bottom: 50px;
 }
+.info-bar-content { display: flex; gap: 30px; justify-content: center; } /* Centrado */
+.info-group { font-family: var(--font-mono); font-size: 0.85rem; }
+.info-label { color: var(--secondary); font-weight: 700; margin-right: 8px; }
 
-.info-bar-content {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
-
-.info-group {
-    font-family: var(--font-mono);
-    font-size: 0.95rem;
-}
-
-.info-label {
-    color: var(--secondary);
-    font-weight: 700;
-    margin-right: 12px;
-}
-
-.info-value { color: var(--text-white); }
-
-/* --- PANEL DE CONTROL (Tarjeta central) --- */
+/* --- PANEL DE CONTROL --- */
 .control-panel {
-    background-color: var(--bg-panel);
-    border: 1px solid #222;
-    border-radius: 10px;
-    /* Efecto Glow sutil */
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); 
-    padding: 40px;
-    /* Borde decorativo lateral izquierdo como en BoxLab */
-    border-left: 4px solid var(--secondary);
-    position: relative;
-    overflow: hidden;
+    background-color: #0f0f0f;
+    border: 1px solid #333;
+    box-shadow: 0 0 40px rgba(0,0,0,0.8);
+    padding: 40px; position: relative; overflow: hidden;
+    max-width: 600px; margin: 0 auto; /* Centrado en página */
+}
+/* Efecto de borde brillante superior */
+.control-panel::before {
+    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--secondary), transparent);
 }
 
-.panel-header {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding-bottom: 15px;
-    margin-bottom: 30px;
-}
+.panel-header { border-bottom: 1px solid #222; padding-bottom: 15px; margin-bottom: 25px; }
+.panel-subtitle { font-family: var(--font-heading); color: #666; font-size: 1rem; letter-spacing: 2px; }
 
-.panel-subtitle {
-    font-family: var(--font-heading);
-    color: var(--text-white);
-    font-size: 1.1rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
+.panel-body { display: flex; flex-direction: column; gap: 25px; align-items: center; text-align: center; }
+.panel-desc { color: var(--text-gray); line-height: 1.6; font-size: 0.95rem; }
+.status-ok { color: var(--secondary); font-weight: bold; font-family: var(--font-mono); text-shadow: 0 0 5px var(--secondary); }
 
-.panel-body {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
-
-/* Centrar contenido interno del panel */
-.control-row {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centra horizontalmente los hijos */
-    text-align: center;  /* Centra el texto */
-    width: 100%;
-}
-
-.panel-desc {
-    color: var(--text-gray);
-    line-height: 1.6;
-}
-
-.status-ok {
-    color: var(--secondary);
-    font-weight: bold;
-    font-family: var(--font-mono);
-}
-
-/* Botón grande central */
+/* Botón Grande */
 .btn-open {
-    background: transparent;
-    border: 2px solid var(--primary);
+    background: rgba(255, 42, 42, 0.05);
+    border: 1px solid var(--primary);
     color: var(--primary);
-    padding: 18px 50px;
-    font-family: var(--font-heading);
-    font-weight: 700;
-    font-size: 1.1rem;
-    cursor: pointer;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
-    border-radius: 4px;
+    padding: 18px 40px;
+    font-family: var(--font-heading); font-weight: 700; font-size: 1rem;
+    cursor: pointer; letter-spacing: 2px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative; overflow: hidden;
 }
-
 .btn-open:hover {
-    background: var(--primary);
-    color: white;
-    box-shadow: 0 0 25px rgba(255, 61, 61, 0.4);
-    transform: translateY(-2px);
+    background: var(--primary); color: black;
+    box-shadow: 0 0 30px rgba(255, 42, 42, 0.5);
+    transform: scale(1.02);
 }
 
-.shortcuts {
-    margin-top: 15px;
-    font-size: 0.8rem;
-    color: #555;
-    font-family: var(--font-mono);
-}
+.shortcuts { margin-top: 15px; font-size: 0.75rem; color: #444; font-family: var(--font-mono); }
+kbd { border: 1px solid #333; padding: 2px 5px; border-radius: 3px; color: #888; background: #111; }
 
-kbd {
-    border: 1px solid #444;
-    padding: 2px 6px;
-    border-radius: 4px;
-    color: var(--secondary);
-    background: rgba(0, 242, 255, 0.05);
-}
 
-/* --- MODAL (Perfectamente Centrado) --- */
+/* =================================================================
+   MODAL PRO (MEJORADO)
+   ================================================================= */
+
 dialog.modal {
-    /* Reseteo de estilos nativos para control total */
-    border: none;
-    background: transparent;
-    padding: 0;
-    
-    /* Centrado absoluto */
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    
-    width: 90%;
-    max-width: 480px;
-    margin: 0;
-    overflow: visible;
+    border: none; background: transparent; padding: 0;
+    /* Centrado */
+    position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 95%; max-width: 500px; margin: 0; overflow: visible;
 }
 
+/* Backdrop con Grid */
 dialog::backdrop {
-    background-color: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(3px);
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(4px);
+    background-image: 
+        linear-gradient(rgba(0, 242, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 242, 255, 0.05) 1px, transparent 1px);
+    background-size: 30px 30px;
 }
 
 .modal-wrapper {
-    background-color: #151515;
-    border: 1px solid var(--secondary);
-    box-shadow: 0 0 50px rgba(0, 242, 255, 0.15);
-    border-radius: 6px;
-    overflow: hidden;
+    background: rgba(15, 15, 20, 0.95);
+    border: 1px solid #333;
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.8);
     position: relative;
-    animation: zoomIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    animation: holographOpen 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    backdrop-filter: blur(10px);
 }
 
-@keyframes zoomIn {
-    from { opacity: 0; transform: scale(0.9); }
-    to { opacity: 1; transform: scale(1); }
+@keyframes holographOpen {
+    0% { opacity: 0; transform: scale(0.9) translateY(20px); filter: blur(10px); }
+    100% { opacity: 1; transform: scale(1) translateY(0); filter: blur(0); }
 }
 
+/* --- Esquinas Tech --- */
+.tech-corner {
+    position: absolute; width: 10px; height: 10px;
+    border-color: var(--secondary); border-style: solid;
+    pointer-events: none; transition: 0.3s;
+}
+.top-left { top: -1px; left: -1px; border-width: 2px 0 0 2px; }
+.top-right { top: -1px; right: -1px; border-width: 2px 2px 0 0; }
+.bottom-left { bottom: -1px; left: -1px; border-width: 0 0 2px 2px; }
+.bottom-right { bottom: -1px; right: -1px; border-width: 0 2px 2px 0; }
+
+.modal-wrapper:hover .tech-corner { width: 20px; height: 20px; box-shadow: 0 0 10px var(--secondary); }
+
+/* Header Modal */
 .modal-header {
-    background: rgba(0, 242, 255, 0.05);
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid rgba(0, 242, 255, 0.2);
+    background: rgba(0, 0, 0, 0.4);
+    padding: 15px 25px;
+    display: flex; justify-content: space-between; align-items: center;
+    border-bottom: 1px solid rgba(0, 242, 255, 0.1);
 }
+
+.header-decoration { display: flex; align-items: center; gap: 8px; }
+.dot { width: 8px; height: 8px; background-color: var(--primary); border-radius: 50%; box-shadow: 0 0 8px var(--primary); }
+.line { width: 30px; height: 1px; background-color: #333; }
 
 .modal-title {
-    font-family: var(--font-heading);
-    color: var(--secondary);
-    font-size: 0.9rem;
-    margin: 0;
+    font-family: var(--font-heading); color: var(--text-white); font-size: 0.9rem; letter-spacing: 1px; margin: 0;
 }
 
 .btn-close {
-    background: none;
-    border: none;
-    color: #666;
-    font-size: 1.5rem;
-    cursor: pointer;
-    line-height: 1;
-    transition: color 0.3s;
+    background: transparent; border: 1px solid transparent; color: #555;
+    cursor: pointer; padding: 4px; transition: 0.3s; display: flex; align-items: center;
 }
+.btn-close:hover { color: var(--primary); border-color: rgba(255, 42, 42, 0.3); background: rgba(255, 42, 42, 0.1); }
 
-.btn-close:hover { color: var(--primary); }
+/* Body Modal */
+.modal-body { padding: 40px 30px; position: relative; z-index: 2; }
+.modal-content-centered { display: flex; flex-direction: column; align-items: center; text-align: center; }
 
-.modal-body {
-    padding: 40px 30px;
+.icon-hexagon {
+    color: var(--secondary); margin-bottom: 20px;
+    filter: drop-shadow(0 0 8px rgba(0, 242, 255, 0.4));
+    animation: floatIcon 3s ease-in-out infinite;
 }
-
-.modal-content-centered {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.icon-box {
-    color: var(--secondary);
-    margin-bottom: 20px;
-}
+@keyframes floatIcon { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
 
 .highlight-text {
-    color: white;
-    font-family: var(--font-heading);
-    font-size: 1.2rem;
-    margin-bottom: 15px;
+    color: white; font-family: var(--font-heading); font-size: 1.3rem; margin-bottom: 15px; letter-spacing: 1px;
 }
+.modal-content-centered p { color: #999; line-height: 1.6; font-size: 0.9rem; max-width: 350px; }
 
-.modal-content-centered p {
-    color: var(--text-gray);
-    line-height: 1.5;
-    font-size: 0.95rem;
-}
-
+/* Footer Modal */
 .modal-footer {
-    padding: 20px;
-    background: rgba(0,0,0,0.2);
-    display: flex;
-    justify-content: center;
-    border-top: 1px solid #222;
+    padding: 20px; background: rgba(0, 0, 0, 0.3);
+    display: flex; justify-content: center; border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .btn-action {
-    background: var(--secondary);
-    color: #000;
-    border: none;
-    padding: 12px 40px;
-    font-family: var(--font-heading);
-    font-weight: 700;
-    font-size: 0.9rem;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: all 0.3s;
+    background: var(--secondary); color: #000;
+    border: none; padding: 12px 30px;
+    font-family: var(--font-heading); font-weight: 700; font-size: 0.85rem;
+    cursor: pointer; letter-spacing: 1px; position: relative; overflow: hidden;
+    clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+    transition: 0.3s;
 }
-
 .btn-action:hover {
-    background: white;
-    box-shadow: 0 0 15px var(--secondary);
+    background: white; box-shadow: 0 0 20px var(--secondary);
 }
 
-/* Decoración scanline */
+/* SCANLINE (Corregido y animado) */
 .scanline {
-    position: absolute;
-    top: 0;
-    left: 0
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to bottom, transparent, rgba(0, 242, 255, 0.05) 50%, transparent);
+    opacity: 0.5; pointer-events: none; z-index: 1;
+    animation: scan 4s linear infinite;
+    background-size: 100% 200%;
+}
+@keyframes scan {
+    0% { background-position: 0% -100%; }
+    100% { background-position: 0% 200%; }
+}
+
+/* =====================================
+   RESPONSIVE
+   ===================================== */
+@media (max-width: 600px) {
+    .main-header { margin-top: 30px; }
+    .page-title { font-size: 1.8rem; }
+    
+    .nav-content { flex-direction: column; gap: 15px; }
+    
+    .info-bar-content { flex-direction: column; align-items: center; gap: 10px; }
+    
+    .control-panel { padding: 25px; }
+    .btn-open { width: 100%; padding: 15px; font-size: 0.9rem; }
+    
+    /* Ajustes Modal Móvil */
+    .modal-body { padding: 30px 20px; }
+    .highlight-text { font-size: 1.1rem; }
+    .btn-action { width: 100%; }
+}

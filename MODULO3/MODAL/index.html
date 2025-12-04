@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modal Interactivo | Diseño UI</title>
+    <title>Modal Interactivo Pro | BoxLAB</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto+Mono:wght@400;500&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -17,7 +17,6 @@
             </a>
             <div class="nav-links">
                 <a href="#" class="nav-link">Laboratorio</a>
-                <a href="#" class="nav-link">Casos Reales</a>
                 <a href="../../index.html" class="btn-nav">← Volver</a>
             </div>
         </div>
@@ -25,19 +24,19 @@
 
     <header class="main-header">
         <div class="container">
-            <h1 class="page-title">MODAL <span class="text-primary">INTERACTIVO</span></h1>
+            <h1 class="page-title">MODAL <span class="text-primary">SYSTEM</span></h1>
         </div>
     </header>
 
     <div class="info-bar-strip">
         <div class="container info-bar-content">
             <div class="info-group">
-                <span class="info-label">Estudiante:</span>
-                <span class="info-value">José David Gorena Nava</span>
+                <span class="info-label">Estado:</span>
+                <span class="info-value">Optimizado v2.0</span>
             </div>
             <div class="info-group">
-                <span class="info-label">Materia:</span>
-                <span class="info-value">Diseño Web 2</span>
+                <span class="info-label">Módulo:</span>
+                <span class="info-value">Diseño Interactivo</span>
             </div>
         </div>
     </div>
@@ -47,24 +46,25 @@
             
             <div class="control-panel">
                 <div class="panel-header">
-                    <h3 class="panel-subtitle">PANEL DE CONTROL //</h3>
+                    <h3 class="panel-subtitle">PANEL DE ACCESO //</h3>
                 </div>
 
                 <div class="panel-body">
                     <div class="control-row">
                         <p class="panel-desc">
-                            Estado del sistema: <span class="status-ok">EN ESPERA</span><br>
-                            Haga clic para iniciar la secuencia de ventana modal.
+                            Sistema preparado. <span class="status-ok">EN LINEA</span><br>
+                            Ejecute el protocolo para visualizar la interfaz modal mejorada.
                         </p>
                     </div>
 
                     <div class="control-row action-area">
                         <button class="btn-open" id="btnOpen">
-                            INICIAR DEMOSTRACIÓN
+                            <span class="btn-text">INICIAR SISTEMA</span>
+                            <span class="btn-glitch"></span>
                         </button>
                         
                         <div class="shortcuts">
-                            <span>Atajos: <kbd>ESPACIO</kbd> abrir • <kbd>ESC</kbd> cerrar</span>
+                            <span>CMD: <kbd>ESPACIO</kbd> / <kbd>ESC</kbd></span>
                         </div>
                     </div>
                 </div>
@@ -74,26 +74,36 @@
     </main>
 
     <dialog class="modal" id="modal">
-        <div class="modal-wrapper">
+        <div class="modal-backdrop-grid"></div> <div class="modal-wrapper">
+            <div class="tech-corner top-left"></div>
+            <div class="tech-corner top-right"></div>
+            <div class="tech-corner bottom-left"></div>
+            <div class="tech-corner bottom-right"></div>
+
             <div class="modal-header">
-                <h2 class="modal-title">MENSAJE DEL SISTEMA</h2>
-                <button class="btn-close" id="btnClose">&times;</button>
+                <div class="header-decoration">
+                    <span class="dot"></span> <span class="line"></span>
+                </div>
+                <h2 class="modal-title">ALERTA DEL SISTEMA</h2>
+                <button class="btn-close" id="btnClose" aria-label="Cerrar">
+                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
             </div>
             
             <div class="modal-body">
                 <div class="modal-content-centered">
-                    <div class="icon-box">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <div class="icon-hexagon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                             <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
                         </svg>
                     </div>
-                    <h3 class="highlight-text">PROTOCOLO ACTIVADO</h3>
-                    <p>El sistema ha respondido correctamente a la interacción del usuario. La ventana modal está centrada y operativa.</p>
+                    <h3 class="highlight-text">ACCESO CONCEDIDO</h3>
+                    <p>La interfaz modal se ha desplegado correctamente. Los parámetros de diseño son responsivos y estables.</p>
                 </div>
             </div>
             
             <div class="modal-footer">
-                <button class="btn-action" id="btnAccept">CONFIRMAR</button>
+                <button class="btn-action" id="btnAccept">CONFIRMAR ACCIÓN</button>
             </div>
             
             <div class="scanline"></div>
