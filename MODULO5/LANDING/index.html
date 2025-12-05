@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="OnlyTWO - Desarrollo Backend y Diseño Web de Alto Rendimiento">
+    <title>OnlyTWO | Cyberpunk Dev</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">Only<span class="highlight">TWO</span></span>
+            </a>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+                <span class="hamburger"></span>
+            </button>
+
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item nav-back-item">
+                    <a href="../../index.html" class="nav-link back-link">
+                        <span class="arrow-icon">⬅</span> Principal
+                    </a>
+                </li>
+
+                <li class="nav-item"><a href="#inicio" class="nav-link active">Inicio</a></li>
+                <li class="nav-item"><a href="#servicios" class="nav-link">Servicios</a></li>
+                <li class="nav-item"><a href="#portafolio" class="nav-link">Portafolio</a></li>
+                <li class="nav-item"><a href="#equipo" class="nav-link">Equipo</a></li>
+                <li class="nav-item"><a href="#contacto" class="nav-link btn-cta nav-cta">Contactar</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero" id="inicio">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content text-center">
+            <div class="badge-cyber">Aceptando proyectos 2025</div>
+            <h1>FORJANDO <span class="text-glow-primary">EXCELENCIA DIGITAL</span><br>EN EL BACKEND</h1>
+            <p class="lead-text">Arquitectura de software sólida y bases de datos optimizadas. Combinamos ingeniería robusta con diseño de alto rendimiento para escalar tu negocio.</p>
+            
+            <div class="hero-buttons">
+                <a href="#portafolio" class="btn-cta btn-primary-glow">Ver Portafolio</a>
+                <a href="#contacto" class="btn-cta btn-secondary-glow">Iniciar Proyecto</a>
+            </div>
+        </div>
+
+        <div class="hero-features-bar">
+            <div class="container features-grid">
+                <div class="feature-item">
+                    <span class="feat-icon">🚀</span>
+                    <h3>VELOCIDAD</h3>
+                </div>
+                <div class="feature-item">
+                    <span class="feat-icon">🛡️</span>
+                    <h3>SEGURIDAD</h3>
+                </div>
+                <div class="feature-item">
+                    <span class="feat-icon">📈</span>
+                    <h3>ESCALABILIDAD</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section" id="servicios">
+        <div class="container">
+            <h2 class="section-title text-center">Stack <span class="text-secondary">Tecnológico</span></h2>
+            
+            <div class="text-block text-center">
+                <p class="lead">
+                    Enfoque en la creación de lógica de servidor y gestión de datos eficiente. 
+                    Utilizando tecnologías como <strong>PHP, Node.js, MySQL y SQL Server</strong>.
+                </p>
+            </div>
+            <br>
+            <div class="grid-layout">
+                <div class="card-tech">
+                    <h3>Gestión de Datos</h3>
+                    <p>Diseño y normalización de bases de datos relacionales para asegurar la integridad de la información.</p>
+                </div>
+                <div class="card-tech">
+                    <h3>API RESTful</h3>
+                    <p>Creación de interfaces de programación seguras para conectar el frontend con la lógica de negocio.</p>
+                </div>
+                <div class="card-tech">
+                    <h3>Server Side</h3>
+                    <p>Lógica compleja del lado del servidor para procesar transacciones y reglas de negocio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section bg-darker" id="portafolio">
+        <div class="container">
+            <h2 class="section-title text-center">Portafolio <span class="text-primary">Reciente</span></h2>
+            <div class="grid-layout3">
+                <div class="card-project">
+                    <div class="project-img-placeholder gradient-1"></div>
+                    <div class="project-info">
+                        <h3>Proyecto Alpha E-Com</h3>
+                        <p>Solución de e-commerce headless con backend de alto rendimiento en Node.js.</p>
+                    </div>
+                </div>
+                <div class="card-project">
+                    <div class="project-img-placeholder gradient-2"></div>
+                    <div class="project-info">
+                        <h3>Beta Finance API</h3>
+                        <p>API RESTful segura para una aplicación fintech móvil con autenticación JWT.</p>
+                    </div>
+                </div>
+                <div class="card-project">
+                    <div class="project-img-placeholder gradient-3"></div>
+                    <div class="project-info">
+                        <h3>Gamma Migration</h3>
+                        <p>Migración exitosa de base de datos legada (Oracle) a sistema moderno en la nube.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section" id="equipo">
+        <div class="container">
+            <h2 class="section-title text-center">Nuestro <span class="text-secondary">Equipo</span></h2>
+            <div class="grid-layout">
+                <div class="card-tech card-team">
+                    <div class="team-avatar">JP</div>
+                    <h3>Jefe de Proyecto</h3>
+                    <p>Arquitectura y dirección técnica.</p>
+                </div>
+                <div class="card-tech card-team">
+                    <div class="team-avatar">DW</div>
+                    <h3>Diseñador UI/UX</h3>
+                    <p>Interfaces visuales y experiencia.</p>
+                </div>
+                <div class="card-tech card-team">
+                    <div class="team-avatar">BE</div>
+                    <h3>Lead Backend</h3>
+                    <p>Lógica de servidor y bases de datos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section bg-darker" id="contacto">
+        <div class="container contact-container">
+            <h2 class="section-title text-center">Inicia tu <span class="text-primary">Proyecto</span></h2>
+            <p class="text-center lead mb-4">¿Necesitas una solución backend robusta? Hablemos.</p>
+            
+            <form class="contact-form">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <input type="text" placeholder="Nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Email" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Cuéntame sobre tu proyecto..." rows="4"></textarea>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn-cta btn-primary-glow w-full-mobile">ENVIAR MENSAJE ➜</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <a href="#" class="logo logo-footer">
+                    <span class="logo-icon">⚡</span>
+                    <span class="logo-text">Only<span class="highlight">TWO</span></span>
+                </a>
+                <p>&copy; 2025 Development. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

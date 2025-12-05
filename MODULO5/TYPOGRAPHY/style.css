@@ -1,0 +1,140 @@
+/* =========================================
+   VARIABLES & SISTEMA TIPOGRÁFICO
+   ========================================= */
+:root {
+    /* Paleta de colores cyberpunk */
+    --color-primary: #ff2e2e;
+    --color-secondary: #00f2ff;
+    --color-bg-dark: #0f1011;
+    --color-lead-dark: #2d3436;
+    --color-lead-light: #353b48;
+    --color-text: #ffffff;
+    --color-text-gray: #dfe6e9;
+
+    /* Renombrando para mantener la consistencia del ejercicio */
+    --bg-color: var(--color-bg-dark);
+    --text-color: var(--color-text);
+    --accent-color: var(--color-primary);
+
+    /* SISTEMA FLUIDO CON CLAMP() */
+    --fs-body: clamp(1rem, 0.9rem + 0.5vw, 1.25rem);
+    --fs-h1: clamp(2rem, 1.5rem + 5vw, 3.5rem);
+    --fs-h2: clamp(1.5rem, 1.2rem + 3vw, 2.5rem);
+    --fs-h3: clamp(1.25rem, 1.1rem + 2vw, 2rem);
+    --lh-tight: 1.1;
+    --lh-body: 1.6;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--color-primary);
+    color: var(--color-text);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.back-link:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-bg-dark);
+}
+
+/* =========================================
+   RESET BÁSICO
+   ========================================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Roboto', sans-serif;
+    font-size: var(--fs-body);
+    line-height: var(--lh-body);
+    padding: 2rem;
+}
+
+/* =========================================
+   ESTILOS DE ENCABEZADOS
+   ========================================= */
+h1, h2, h3, h4 {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 800;
+    line-height: var(--lh-tight);
+    margin-bottom: 0.8em;
+    color: var(--color-text);
+}
+
+h1 {
+    font-size: var(--fs-h1);
+    color: var(--accent-color);
+}
+
+h2 {
+    font-size: var(--fs-h2);
+    margin-top: 2em;
+    border-bottom: 2px solid var(--color-secondary);
+    padding-bottom: 0.3em;
+}
+
+h3 {
+    font-size: var(--fs-h3);
+    color: var(--color-secondary);
+}
+
+/* =========================================
+   ELEMENTOS DE TEXTO
+   ========================================= */
+p {
+    margin-bottom: 1.5em;
+    max-width: 65ch;
+    color: var(--color-text-gray);
+}
+
+.subtitle {
+    font-size: 1.2em;
+    opacity: 0.8;
+    font-weight: 300;
+    color: var(--color-secondary);
+}
+
+blockquote {
+    border-left: 5px solid var(--accent-color);
+    padding-left: 1rem;
+    font-style: italic;
+    font-size: 1.1em;
+    margin: 2rem 0;
+    background: var(--color-lead-dark);
+    padding: 1rem 1.5rem;
+    border-radius: 0 8px 8px 0;
+    color: var(--color-text-gray);
+}
+
+code {
+    background-color: var(--color-lead-light);
+    color: var(--color-secondary);
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+    font-size: 0.9em;
+    font-family: monospace;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: var(--color-lead-light);
+    margin: 3rem 0;
+}
+
+/* =========================================
+   LAYOUT
+   ========================================= */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}

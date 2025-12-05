@@ -1,0 +1,160 @@
+:root {
+    --color-primary: #ff2e2e;
+    --color-secondary: #00f2ff;
+    --color-bg-dark: #0f1011;
+    --color-lead-dark: #2d3436;
+    --color-lead-light: #353b48;
+    --color-text: #ffffff;
+    --color-text-gray: #dfe6e9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--color-bg-dark);
+    color: var(--color-text);
+}
+
+/* --- Estilos de la Navbar --- */
+.navbar {
+    display: flex; /* Flexbox para alinear logo y menú */
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-bg-dark);
+    padding: 1rem 2rem;
+    color: white;
+    position: relative;
+    border-bottom: 2px solid var(--color-primary);
+    height: 80px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    cursor: pointer;
+    font-family: 'Orbitron', sans-serif;
+    color: var(--color-primary);
+}
+
+/* Estilos de los enlaces (Desktop por defecto) */
+.nav-links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 2rem; /* Espacio entre enlaces */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--color-secondary);
+}
+
+/* Estilos del botón Hamburguesa (Oculto en Desktop) */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    z-index: 1001; /* Asegurar que esté sobre el menú */
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+/* --- Media Queries (Mobile) --- */
+@media (max-width: 768px) {
+    /* Mostramos el botón hamburguesa */
+    .hamburger {
+        display: block;
+    }
+
+    /* Transformamos el menú horizontal a un panel lateral/vertical */
+    .nav-links {
+        position: fixed;
+        top: 80px; /* Debajo de la navbar */
+        right: -100%; /* Oculto fuera de la pantalla a la derecha */
+        height: calc(100vh - 80px);
+        width: 100%;
+        background-color: rgba(15, 16, 17, 0.98);
+        backdrop-filter: blur(5px);
+        flex-direction: column; /* Apilar enlaces verticalmente */
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 60px;
+        transition: right 0.4s ease-in-out; /* Transición suave */
+        gap: 0;
+    }
+
+    /* Clase activa para mostrar el menú (JS la activará) */
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links li {
+        margin: 1.5rem 0;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .nav-links a {
+        font-size: 1.5rem;
+        padding: 1rem;
+        display: block;
+    }
+
+    /* Animación del icono hamburguesa a una "X" */
+    .hamburger.active .bar {
+        background-color: var(--color-primary);
+    }
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0; /* Ocultar barra central */
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+.nav-links a.back-link {
+    font-size: 0.9rem;
+    color: var(--color-text-gray);
+    border: 1px solid var(--color-lead-light);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a.back-link:hover {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: var(--color-text);
+}
+
+/* On desktop, add a separator */
+@media (min-width: 769px) {
+    .nav-back-item {
+        margin-right: 1rem;
+        padding-right: 1rem;
+        border-right: 1px solid var(--color-lead-light);
+    }
+}

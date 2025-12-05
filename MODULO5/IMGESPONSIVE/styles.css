@@ -1,0 +1,106 @@
+:root {
+    --color-primary: #ff2e2e;
+    --color-secondary: #00f2ff;
+    --color-bg-dark: #0f1011;
+    --color-lead-dark: #2d3436;
+    --color-lead-light: #353b48;
+    --color-text: #ffffff;
+    --color-text-gray: #dfe6e9;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--color-primary);
+    color: var(--color-text);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.back-link:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-bg-dark);
+}
+
+/* Reseteo básico y estilos generales */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: var(--color-bg-dark);
+    color: var(--color-text);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: var(--color-lead-dark);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border: 1px solid var(--color-lead-light);
+}
+
+h2 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--color-text);
+    border-left: 5px solid var(--color-primary);
+    padding-left: 10px;
+    margin-top: 2rem;
+}
+
+/* Hacemos que las imágenes sean fluidas */
+.responsive-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+    border: 2px solid var(--color-secondary);
+}
+
+/* --------------------------------------------------
+   CASO 3: Lógica para Fondo Responsive
+   -------------------------------------------------- */
+
+.hero-background {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    transition: background-image 0.3s ease-in-out;
+    
+    /* 1. Mobile First (Imagen pequeña por defecto) */
+    background-image: url('https://placehold.co/400x400/ff2e2e/FFF?text=BG+Mobile');
+}
+
+/* 2. Tablet (Media Query) */
+@media (min-width: 600px) {
+    .hero-background {
+        background-image: url('https://placehold.co/800x400/00f2ff/000?text=BG+Tablet');
+    }
+}
+
+/* 3. Desktop (Media Query) */
+@media (min-width: 1024px) {
+    .hero-background {
+        background-image: url('https://placehold.co/1200x400/2d3436/FFF?text=BG+Desktop');
+    }
+}
+
+/* 4. Pantallas de alta densidad (Retina display) - Opcional pero recomendado */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .hero-background {
+        /* Aquí cargaríamos una imagen @2x para mayor nitidez */
+        border: 2px solid var(--color-primary); /* Borde para indicar que es pantalla retina en este demo */
+    }
+}
